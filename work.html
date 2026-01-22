@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Work | PHP Developer</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f2f5; color:#212529; line-height:1.6; }
+  a { color:#0d6efd; text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  nav { background:white; box-shadow:0 2px 8px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; }
+  nav .container { max-width:1200px; margin:0 auto; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
+  nav .logo { font-size:1.3rem; font-weight:700; color:#0d6efd; }
+  nav ul { list-style:none; display:flex; gap:30px; }
+  nav ul li a { color:#212529; font-weight:500; padding:5px 0; }
+  nav ul li a:hover, nav ul li a.active { color:#0d6efd; text-decoration:none; border-bottom:2px solid #0d6efd; }
+  .mobile-toggle { display:none; font-size:1.5rem; cursor:pointer; }
+
+  .container { max-width:1200px; margin:0 auto; padding:20px; }
+  section { margin:35px 0; }
+  
+  .page-header { text-align:center; padding:50px 20px 35px; background:linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%); color:white; }
+  .page-header h1 { font-size:2.5rem; margin:0 0 12px; font-weight:600; }
+  .page-header p { font-size:1.05rem; max-width:700px; margin:0 auto; }
+
+  h2 { font-size:1.7rem; border-bottom:3px solid #0d6efd; padding-bottom:8px; margin-bottom:20px; color:#0d6efd; }
+
+  .featured-project { background:linear-gradient(135deg, #f8f9ff 0%, #e8f1ff 100%); padding:30px; border-radius:12px; border:2px solid #0d6efd; margin-bottom:35px; }
+  .featured-project h3 { color:#0d6efd; margin:15px 0 12px; font-size:1.4rem; }
+  .featured-badge { background:#0d6efd; color:white; padding:5px 12px; border-radius:15px; font-size:0.85rem; font-weight:600; display:inline-block; }
+  .featured-project p { margin:10px 0; line-height:1.7; }
+  .featured-project strong { color:#0d6efd; }
+
+  .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+  .project-card { background:white; padding:22px; border-radius:10px; box-shadow:0 6px 15px rgba(0,0,0,0.08); transition:transform 0.2s, box-shadow 0.2s; border-left:4px solid #0d6efd; }
+  .project-card:hover { transform:translateY(-4px); box-shadow:0 10px 25px rgba(0,0,0,0.12); }
+  .project-card h3 { margin:0 0 12px; color:#0d6efd; font-size:1.25rem; }
+  .project-card p { margin:10px 0; font-size:0.95rem; line-height:1.6; }
+  .project-links { margin-top:15px; font-size:0.95rem; }
+  .project-links a { margin-right:15px; color:#0d6efd; font-weight:500; }
+
+  footer { background:#212529; color:#adb5bd; padding:30px 20px; margin-top:60px; }
+  footer .container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; }
+  footer h4 { color:white; margin-bottom:12px; font-size:1rem; }
+  footer ul { list-style:none; }
+  footer ul li { margin-bottom:8px; }
+  footer ul li a { color:#adb5bd; }
+  footer ul li a:hover { color:white; }
+  footer .footer-bottom { text-align:center; margin-top:25px; padding-top:20px; border-top:1px solid #495057; font-size:0.9rem; }
+
+  @media(max-width:768px){
+    nav ul { display:none; flex-direction:column; position:absolute; top:60px; left:0; right:0; background:white; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+    nav ul.active { display:flex; }
+    .mobile-toggle { display:block; }
+    .page-header h1 { font-size:2rem; }
+    .projects { grid-template-columns:1fr; }
+    footer .container { flex-direction:column; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">PHPDev</div>
+    <span class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</span>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="process.html">Process & FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Sample Work</h1>
+  <p>Real examples showing code quality, problem-solving approach, and technical expertise.</p>
+</div>
+
+<div class="container">
+  <section>
+    <h2>Recent Projects</h2>
+    
+    <div class="featured-project">
+      <span class="featured-badge">COMPLETE PROJECT</span>
+      <h3>Professional Service Website</h3>
+      <p>Full-stack responsive website built from scratch in 3-4 hours. Working contact form with PHP/PHPMailer backend, services pages, portfolio gallery with modals, legal pages, and complete mobile responsiveness.</p>
+      <p><strong>Tech:</strong> HTML5, CSS3, JavaScript, PHP, PHPMailer, responsive design, form validation</p>
+      <p><strong>Timeline:</strong> 3-4 hours from concept to fully functional and tested</p>
+      <div class="project-links" style="margin-top:20px;">
+        <a href="https://github.com/LaravelDev2026/professional-service-website" target="_blank" style="background:white; color:#0d6efd; padding:10px 20px; border-radius:5px; font-weight:600; display:inline-block;">View on GitHub →</a>
+      </div>
+    </div>
+
+    <p style="margin-bottom:25px;">Below are code examples demonstrating my approach to refactoring, debugging, and optimization. Each shows before/after comparisons:</p>
+    
+    <div class="projects">
+      <div class="project-card">
+        <h3>Laravel Route Refactoring</h3>
+        <p>Cleaned up a messy user management route for better readability, security, and maintainability. Shows proper middleware usage, validation, and error handling in Laravel.</p>
+        <div class="project-links">
+          <a href="./messy_user_route.php" target="_blank">Before →</a>
+          <a href="./clean_user_route.php" target="_blank">After →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>PHP Function Refactoring</h3>
+        <p>Legacy PHP functions modernized with type hints, proper documentation, and best practices. Demonstrates improved readability and maintainability without changing functionality.</p>
+        <div class="project-links">
+          <a href="./messy_functions.php" target="_blank">Before →</a>
+          <a href="./clean_functions.php" target="_blank">After →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>jQuery Carousel Bug Fix</h3>
+        <p>Fixed a broken image carousel with animation issues and poor mobile responsiveness. Improved event handling, smooth transitions, and cross-device compatibility.</p>
+        <div class="project-links">
+          <a href="./messy_carousel.js" target="_blank">Before →</a>
+          <a href="./clean_carousel.js" target="_blank">After →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>SQL Query Optimization</h3>
+        <p>Optimized a slow database query causing performance issues. Added proper indexing, selective column selection, and efficient join strategies for faster execution.</p>
+        <div class="project-links">
+          <a href="./bad_query.sql" target="_blank">Before →</a>
+          <a href="./optimized_query.sql" target="_blank">After →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>PHPDev</h4>
+      <p>PHP bug fixes, maintenance & custom development.<br>100+ projects delivered since 2019.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Sample Work</a></li>
+        <li><a href="process.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Core Skills</h4>
+      <ul>
+        <li>PHP & Laravel</li>
+        <li>MySQL / MariaDB</li>
+        <li>JavaScript & jQuery</li>
+        <li>HTML5, CSS3, Bootstrap</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:phpdev2026@gmail.com">phpdev2026@gmail.com</a></li>
+        <li><a href="https://github.com/PHPDev2026" target="_blank">GitHub Profile</a></li>
+        <li>£30-50/hour</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 PHPDev. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

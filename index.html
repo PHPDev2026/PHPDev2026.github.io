@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHP Developer | Bug Fixes, Maintenance & Custom Development</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f2f5; color:#212529; line-height:1.6; }
+  a { color:#0d6efd; text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  nav { background:white; box-shadow:0 2px 8px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; }
+  nav .container { max-width:1200px; margin:0 auto; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
+  nav .logo { font-size:1.3rem; font-weight:700; color:#0d6efd; }
+  nav ul { list-style:none; display:flex; gap:30px; }
+  nav ul li a { color:#212529; font-weight:500; padding:5px 0; }
+  nav ul li a:hover, nav ul li a.active { color:#0d6efd; text-decoration:none; border-bottom:2px solid #0d6efd; }
+  .mobile-toggle { display:none; font-size:1.5rem; cursor:pointer; }
+
+  .container { max-width:1200px; margin:0 auto; padding:20px; }
+  section { margin:40px 0; }
+  
+  .hero { text-align:center; padding:80px 20px 60px; background:linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%); color:white; }
+  .hero h1 { font-size:2.8rem; margin:0 0 15px; font-weight:600; }
+  .hero .tagline { font-size:1.3rem; color:#e8f1ff; margin-bottom:15px; font-weight:600; }
+  .hero p { font-size:1.05rem; max-width:750px; margin:10px auto; line-height:1.7; }
+  
+  .stats { display:flex; justify-content:center; gap:40px; margin-top:30px; flex-wrap:wrap; }
+  .stat-item { text-align:center; }
+  .stat-number { font-size:2.3rem; font-weight:700; display:block; }
+  .stat-label { font-size:0.9rem; opacity:0.9; }
+
+  .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin:25px 0; }
+  .why-card { background:white; padding:22px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); border-top:4px solid #0d6efd; }
+  .why-card h3 { color:#0d6efd; margin:0 0 10px; font-size:1.15rem; }
+  .why-card p { margin:0; line-height:1.6; font-size:0.95rem; }
+
+  h2 { font-size:1.7rem; border-bottom:3px solid #0d6efd; padding-bottom:8px; margin-bottom:20px; color:#0d6efd; }
+
+  .cta-section { text-align:center; background:linear-gradient(135deg, #f8f9ff 0%, #e8f1ff 100%); padding:40px 20px; border-radius:12px; margin:40px 0; }
+  .cta-section h2 { border:none; margin-bottom:15px; }
+  .cta-btn { display:inline-block; background:#0d6efd; color:white; padding:15px 35px; border-radius:8px; font-size:1.05rem; font-weight:600; margin-top:15px; transition:background 0.2s; }
+  .cta-btn:hover { background:#0a58ca; text-decoration:none; }
+
+  footer { background:#212529; color:#adb5bd; padding:30px 20px; margin-top:60px; }
+  footer .container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; }
+  footer h4 { color:white; margin-bottom:12px; font-size:1rem; }
+  footer ul { list-style:none; }
+  footer ul li { margin-bottom:8px; }
+  footer ul li a { color:#adb5bd; }
+  footer ul li a:hover { color:white; }
+  footer .footer-bottom { text-align:center; margin-top:25px; padding-top:20px; border-top:1px solid #495057; font-size:0.9rem; }
+
+  @media(max-width:768px){
+    nav ul { display:none; flex-direction:column; position:absolute; top:60px; left:0; right:0; background:white; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+    nav ul.active { display:flex; }
+    .mobile-toggle { display:block; }
+    .hero h1 { font-size:2rem; }
+    .stats { gap:20px; }
+    footer .container { flex-direction:column; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">PHPDev</div>
+    <span class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</span>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="process.html">Process & FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>PHP Developer</h1>
+  <p class="tagline">Bug fixes. Legacy code rescue. Custom development.</p>
+  <p>I fix broken PHP applications, debug issues that have stumped other developers, and build custom solutions from scratch. Whether it's a critical bug that needs fixing today or a complete application that needs building this week, I deliver working code fast.</p>
+  
+  <div class="stats">
+    <div class="stat-item">
+      <span class="stat-number">100+</span>
+      <span class="stat-label">Projects Completed</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">6+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">Same Day</span>
+      <span class="stat-label">Most Bugs Fixed</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <section>
+    <h2>Why Work With Me</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>🔧 Bug Fixing Specialist</h3>
+        <p>Most developers prefer building new features. I excel at debugging legacy code, tracking down edge cases, and fixing issues others have given up on. If it's broken, I can fix it.</p>
+      </div>
+      <div class="why-card">
+        <h3>⚡ Fast Turnaround</h3>
+        <p>Most bugs diagnosed and fixed within hours, not days. Small features delivered in 1-3 days. Complete applications built in days, not weeks. I prioritize getting you working solutions quickly.</p>
+      </div>
+      <div class="why-card">
+        <h3>📊 Pattern Recognition</h3>
+        <p>After 100+ projects, I've seen most PHP bugs and database issues before. I can often identify root causes from symptoms alone, saving hours of trial-and-error debugging.</p>
+      </div>
+      <div class="why-card">
+        <h3>🎯 First-Time Accuracy</h3>
+        <p>9 out of 10 implementations work correctly on the first attempt. This comes from thorough analysis and planning before writing code, not quick patches that break later.</p>
+      </div>
+      <div class="why-card">
+        <h3>💬 Clear Communication</h3>
+        <p>Written updates on progress, issues, and solutions. No jargon, no surprises. You always know what's happening with your project and why decisions are being made.</p>
+      </div>
+      <div class="why-card">
+        <h3>🔍 Complete Transparency</h3>
+        <p>Every change documented: what was broken, why it broke, how it's fixed, what was tested. You get full explanations and clean, maintainable code.</p>
+      </div>
+    </div>
+  </section>
+ 
+  <div class="cta-section">
+    <h2>Need Something Fixed or Built?</h2>
+    <p>Whether it's an urgent bug or a complete project, let's discuss how I can help.</p>
+    <a href="contact.html" class="cta-btn">Get In Touch</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>PHPDev</h4>
+      <p>PHP bug fixes, maintenance & custom development.<br>100+ projects delivered since 2019.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Sample Work</a></li>
+        <li><a href="process.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Core Skills</h4>
+      <ul>
+        <li>PHP & Laravel</li>
+        <li>MySQL / MariaDB</li>
+        <li>JavaScript & jQuery</li>
+        <li>HTML5, CSS3, Bootstrap</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:phpdev2026@gmail.com">phpdev2026@gmail.com</a></li>
+        <li><a href="https://github.com/PHPDev2026" target="_blank">GitHub Profile</a></li>
+        <li>£30-50/hour</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 PHPDev. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
