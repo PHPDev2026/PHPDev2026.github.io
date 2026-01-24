@@ -3,84 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get in touch for PHP bug fixes, legacy code rescue, and custom development. Fast response times and transparent pricing.">
 <title>Contact | PHP Developer</title>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f2f5; color:#212529; line-height:1.6; }
-  a { color:#0d6efd; text-decoration:none; }
-  a:hover { text-decoration:underline; }
-
-  nav { background:white; box-shadow:0 2px 8px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; }
-  nav .container { max-width:1200px; margin:0 auto; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
-  nav .logo { font-size:1.3rem; font-weight:700; color:#0d6efd; }
-  nav ul { list-style:none; display:flex; gap:30px; }
-  nav ul li a { color:#212529; font-weight:500; padding:5px 0; }
-  nav ul li a:hover, nav ul li a.active { color:#0d6efd; text-decoration:none; border-bottom:2px solid #0d6efd; }
-  .mobile-toggle { display:none; font-size:1.5rem; cursor:pointer; }
-
-  .container { max-width:1200px; margin:0 auto; padding:20px; }
-  
-  .page-header { text-align:center; padding:50px 20px 35px; background:linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%); color:white; }
-  .page-header h1 { font-size:2.5rem; margin:0 0 12px; font-weight:600; }
-  .page-header p { font-size:1.05rem; max-width:700px; margin:0 auto; }
-
-  .contact-content { max-width:800px; margin:40px auto; }
-  .contact-box { background:white; padding:35px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08); text-align:center; }
-  .contact-item { margin:25px 0; padding:20px; background:#f8f9ff; border-radius:8px; transition:transform 0.2s; }
-  .contact-item:hover { transform:translateY(-3px); }
-  .contact-item h3 { color:#0d6efd; margin:0 0 10px; font-size:1.2rem; }
-  .contact-item a { color:#0d6efd; font-size:1.1rem; font-weight:500; }
-  .contact-item p { margin:8px 0 0; color:#6c757d; font-size:0.95rem; }
-
-  .rate-box { background:linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%); color:white; padding:30px; border-radius:12px; margin-top:30px; text-align:center; }
-  .rate-box h3 { margin:0 0 20px; font-size:1.4rem; }
-  .rate-box .price { font-size:2.2rem; font-weight:700; margin:15px 0; }
-  .pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:20px 0; text-align:left; }
-  .pricing-item { background:rgba(255,255,255,0.1); padding:15px; border-radius:8px; }
-  .pricing-item strong { display:block; margin-bottom:5px; font-size:1.05rem; }
-  .pricing-item span { font-size:0.9rem; opacity:0.95; }
-  .rate-box p { margin:10px 0; opacity:0.95; font-size:0.95rem; }
-
-  .availability { background:#d1e7dd; color:#0f5132; padding:20px; border-radius:8px; margin:30px 0; text-align:center; border:2px solid #badbcc; }
-  .availability h3 { margin:0 0 8px; font-size:1.2rem; }
-  .availability p { margin:0; font-size:0.95rem; }
-
-  .what-to-include { text-align:center; margin-top:40px; padding:30px; background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
-  .what-to-include h3 { color:#0d6efd; margin-bottom:15px; }
-  .what-to-include ul { text-align:left; max-width:600px; margin:0 auto; line-height:2; }
-  .what-to-include p { margin-top:20px; color:#6c757d; font-size:0.95rem; }
-
-  footer { background:#212529; color:#adb5bd; padding:30px 20px; margin-top:60px; }
-  footer .container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; }
-  footer h4 { color:white; margin-bottom:12px; font-size:1rem; }
-  footer ul { list-style:none; }
-  footer ul li { margin-bottom:8px; }
-  footer ul li a { color:#adb5bd; }
-  footer ul li a:hover { color:white; }
-  footer .footer-bottom { text-align:center; margin-top:25px; padding-top:20px; border-top:1px solid #495057; font-size:0.9rem; }
-
-  @media(max-width:768px){
-    nav ul { display:none; flex-direction:column; position:absolute; top:60px; left:0; right:0; background:white; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
-    nav ul.active { display:flex; }
-    .mobile-toggle { display:block; }
-    .page-header h1 { font-size:2rem; }
-    .contact-box { padding:25px; }
-    .pricing-grid { grid-template-columns:1fr; }
-    footer .container { flex-direction:column; text-align:center; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
   <div class="container">
     <div class="logo">PHPDev</div>
-    <span class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</span>
-    <ul>
+    <button class="mobile-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="work.html">Work</a></li>
-      <li><a href="process.html">Process & FAQ</a></li>
+      <li><a href="process.html">Process</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </div>
@@ -100,98 +41,148 @@
     </div>
 
     <div class="contact-box">
+      <h2 style="border: none; margin-bottom: 30px;">Get In Touch</h2>
+      
       <div class="contact-item">
-        <h3>📧 Email</h3>
-        <a href="mailto:phpdev2026@outlook.com">phpdev2026@outlook.com</a></li>
-        <p>Preferred contact method. I respond within 24 hours.</p>
+        <h3>📧 Email (Preferred)</h3>
+        <a href="mailto:phpdev2026@outlook.com">Email Me</a>
+        <p>Best for project enquiries, proposals, detailed discussions, or just a quick chat and questions you may have.</p><br>
+        <p>I respond within 24 hours, usually faster. I check my email multiple times a day.</p>
       </div>
-
       <div class="contact-item">
         <h3>💻 GitHub</h3>
-        <a href="https://github.com/PHPDev2026" target="_blank">github.com/PHPDev2026</a>
-        <p>View code samples and recent projects.</p>
+        <a href="https://github.com/PHPDev2026" target="_blank" rel="noopener">github.com/PHPDev2026</a>
+        <p>Check code samples, recent Laravel/PHP projects, and contributions.</p>
       </div>
-
+      
       <div class="rate-box">
         <h3>Rates & Typical Costs</h3>
-        <div class="price">£30-50/hour</div>
+        <div class="price">£30/hr HTML | £35/hr PHP | £45-50/hr Laravel</div>
         
         <div class="pricing-grid">
           <div class="pricing-item">
-            <strong>🔧 Bug Fixes</strong>
-            <span>Most fixed in 2-4 hours<br>Typical cost: £60-200</span>
+            <strong>📄 HTML/CSS Sites</strong>
+            <span>Static/landing pages<br>1-2 days: £200-400 fixed</span>
           </div>
           <div class="pricing-item">
-            <strong>⚡ Small Features</strong>
-            <span>1-3 days delivery<br>Typical cost: £240-600</span>
+            <strong>🐘 PHP Sites</strong>
+            <span>Forms, basic CMS, basic user auth, custom scripts<br>2-5 days: £400-1k fixed</span>
           </div>
           <div class="pricing-item">
-            <strong>🏗️ Complete Apps</strong>
-            <span>3-7 days delivery<br>Quoted per project</span>
+            <strong>🚀 Laravel Apps</strong>
+            <span>Full-stack, APIs, Eloquent/DB<br>Quoted (e.g. £1.5k-5k+)</span>
           </div>
           <div class="pricing-item">
-            <strong>📊 Refactoring</strong>
-            <span>Varies by complexity<br>Quoted after review</span>
+            <strong>🔧 Bug Fixes (Any)</strong>
+            <span>1-4 hours: £60-200</span>
+          </div>
+          <div class="pricing-item">
+            <strong>♻️ Refactor/Legacy</strong>
+            <span>PHP/Laravel cleanups<br>Quoted after review</span>
+          </div>
+          <div class="pricing-item">
+            <strong>📅 Retainers</strong>
+            <span>Ongoing support (5-20 hrs/mo)<br>£800-3k/month</span>
           </div>
         </div>
-
-        <p style="margin-top:20px;"><strong>Payment:</strong> PayPal or bank transfer. 50% upfront for projects over £500.</p>
-        <p style="font-size:0.9rem; opacity:0.9;">Emergency/urgent fixes available at premium rates.</p>
+      
+        <p style="margin-top: 20px; font-size: 1rem;"><strong>Payment:</strong> PayPal</p>
+        <p><strong>Jobs over £500:</strong> 50% deposit upfront<br>
+        <strong>Final payment:</strong> Due within 15 days<br>
+        <strong>Retainers:</strong> Paid monthly upfront</p>
+        <p style="font-size: 0.9rem; opacity: 0.9;"><strong>Urgent work:</strong> +50% rate, 24hr-48hr delivery</p>
       </div>
     </div>
 
     <div class="what-to-include">
       <h3>What to Include in Your Message</h3>
       <ul>
-        <li>Brief description of the problem or project</li>
-        <li>What you're trying to achieve</li>
-        <li>Any error messages or specific issues</li>
-        <li>Timeline or deadline (if any)</li>
-        <li>Your budget range (helps me give accurate quotes)</li>
+        <li><strong>Brief description</strong> of the problem or project</li>
+        <li><strong>What you're trying to achieve</strong> (the end goal)</li>
+        <li><strong>Any error messages</strong> or specific issues you're experiencing</li>
+        <li><strong>Timeline or deadline</strong> (if any)</li>
+        <li><strong>Budget range</strong> (helps me give accurate quotes quickly)</li>
+        <li><strong>Tech stack</strong> if known (PHP version, framework, database, etc.)</li>
+        <li><strong>Bonus help for me</strong> if you can link to your github so I can check out the project ahead of time</li>
       </ul>
-      <p>I'll respond with an honest assessment of timeline, cost, and whether I'm the right fit for your project.</p>
+      <p>I'll respond with an honest assessment of timeline, cost, and whether I'm the right fit for your project. No pressure, no hard sell—just transparent advice.</p>
     </div>
+
+    <section style="margin-top: 50px;">
+      <h2>Why Reach Out?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="card-icon">⚡</div>
+          <h3>Fast Response</h3>
+          <p>24-hour response time on all inquiries. For urgent issues, I often respond within hours.</p>
+        </div>
+        <div class="why-card">
+          <div class="card-icon">💬</div>
+          <h3>Honest Assessment</h3>
+          <p>I'll tell you upfront if I can help, timeline, and realistic costs. No surprises.</p>
+        </div>
+        <div class="why-card">
+          <div class="card-icon">🔒</div>
+          <h3>Confidential</h3>
+          <p>Your project details remain private. Happy to sign NDAs before discussion.</p>
+        </div>
+      </div>
+    </section>
 
   </div>
 </div>
 
 <footer>
   <div class="container">
-    <div>
-      <h4>PHPDev</h4>
-      <p>PHP bug fixes, maintenance & custom development.<br>100+ projects delivered since 2019.</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>PHPDev</h4>
+        <p>PHP bug fixes, legacy code rescue & custom development.</p>
+        <p class="footer-tagline">100+ projects delivered since 2019</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Expertise</h4>
+        <ul>
+          <li>Bug Fixes</li>
+          <li>PHP & Laravel</li>
+          <li>SQL / MariaDB</li>
+          <li>JavaScript</li>
+          <li>HTML5, CSS3, Bootstrap</li>
+          <li>Legacy Code Rescue</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul class="social-links">
+          <li><a href="mailto:phpdev2026@outlook.com">📧 Email</a></li>
+          <li><a href="https://www.github.com/PHPDev2026" target="_blank" rel="noopener">💻 GitHub</a></li>
+        </ul>
+        <p class="rate-info">£30-50/hour</p>
+      </div>
     </div>
-    <div>
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="work.html">Sample Work</a></li>
-        <li><a href="process.html">How It Works</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PHPDev. All rights reserved.</p>
     </div>
-    <div>
-      <h4>Core Skills</h4>
-      <ul>
-        <li>PHP & Laravel</li>
-        <li>MySQL / MariaDB</li>
-        <li>JavaScript & jQuery</li>
-        <li>HTML5, CSS3, Bootstrap</li>
-      </ul>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:phpdev2026@outlook.com">phpdev2026@outlook.com</a></li>
-        <li><a href="https://github.com/PHPDev2026" target="_blank">GitHub Profile</a></li>
-        <li>£30-50/hour</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 PHPDev. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+// Mobile menu toggle
+document.querySelector('.mobile-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-menu').classList.toggle('active');
+  this.classList.toggle('active');
+});
+</script>
 
 </body>
 </html>
