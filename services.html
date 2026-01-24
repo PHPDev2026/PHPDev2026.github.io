@@ -3,73 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PHP development services: emergency bug fixes, legacy code rescue, Laravel development, database optimization, and more.">
 <title>Services | PHP Developer</title>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f0f2f5; color:#212529; line-height:1.6; }
-  a { color:#0d6efd; text-decoration:none; }
-  a:hover { text-decoration:underline; }
-
-  nav { background:white; box-shadow:0 2px 8px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; }
-  nav .container { max-width:1200px; margin:0 auto; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }
-  nav .logo { font-size:1.3rem; font-weight:700; color:#0d6efd; }
-  nav ul { list-style:none; display:flex; gap:30px; }
-  nav ul li a { color:#212529; font-weight:500; padding:5px 0; }
-  nav ul li a:hover, nav ul li a.active { color:#0d6efd; text-decoration:none; border-bottom:2px solid #0d6efd; }
-  .mobile-toggle { display:none; font-size:1.5rem; cursor:pointer; }
-
-  .container { max-width:1200px; margin:0 auto; padding:20px; }
-  section { margin:35px 0; }
-  
-  .page-header { text-align:center; padding:50px 20px 35px; background:linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%); color:white; }
-  .page-header h1 { font-size:2.5rem; margin:0 0 12px; font-weight:600; }
-  .page-header p { font-size:1.05rem; max-width:700px; margin:0 auto; }
-
-  h2 { font-size:1.7rem; border-bottom:3px solid #0d6efd; padding-bottom:8px; margin-bottom:20px; color:#0d6efd; }
-  h3 { color:#0d6efd; margin:25px 0 15px; font-size:1.3rem; }
-
-  .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin:20px 0; }
-  .service-box { background:white; padding:20px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.05); transition:transform 0.2s; }
-  .service-box:hover { transform:translateY(-3px); }
-  .service-box h4 { color:#0d6efd; margin:0 0 10px; font-size:1.1rem; }
-  .service-box p { margin:0; font-size:0.95rem; line-height:1.6; }
-
-  .highlight-box { background:#f8f9ff; padding:25px; border-radius:10px; border-left:4px solid #0d6efd; margin:20px 0; }
-  .highlight-box p { margin:0; line-height:1.7; }
-  .highlight-box strong { color:#0d6efd; }
-
-  .tech-badges { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; }
-  .tech-badges span { background:#0d6efd; color:white; padding:7px 13px; border-radius:18px; font-size:0.9rem; font-weight:500; }
-
-  footer { background:#212529; color:#adb5bd; padding:30px 20px; margin-top:60px; }
-  footer .container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; }
-  footer h4 { color:white; margin-bottom:12px; font-size:1rem; }
-  footer ul { list-style:none; }
-  footer ul li { margin-bottom:8px; }
-  footer ul li a { color:#adb5bd; }
-  footer ul li a:hover { color:white; }
-  footer .footer-bottom { text-align:center; margin-top:25px; padding-top:20px; border-top:1px solid #495057; font-size:0.9rem; }
-
-  @media(max-width:768px){
-    nav ul { display:none; flex-direction:column; position:absolute; top:60px; left:0; right:0; background:white; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
-    nav ul.active { display:flex; }
-    .mobile-toggle { display:block; }
-    .page-header h1 { font-size:2rem; }
-    footer .container { flex-direction:column; text-align:center; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
   <div class="container">
     <div class="logo">PHPDev</div>
-    <span class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</span>
-    <ul>
+    <button class="mobile-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html" class="active">Services</a></li>
       <li><a href="work.html">Work</a></li>
-      <li><a href="process.html">Process & FAQ</a></li>
+      <li><a href="process.html">Process</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
@@ -81,94 +33,94 @@
 </div>
 
 <div class="container">
-  <section>
+  <section class="service-category">
     <h2>Bug Fixes & Maintenance</h2>
-    <p style="margin-bottom:20px;">Most of my work is fixing broken code and maintaining existing applications. This is where I excel.</p>
+    <p>Most of my work is fixing broken code and maintaining existing applications. This is where I excel.</p>
     <div class="services">
       <div class="service-box">
-        <h4>Emergency Bug Fixes</h4>
+        <h4>🔴 Emergency Bug Fixes</h4>
         <p>Critical errors breaking your site? Database issues? Forms not working? I diagnose and fix urgent problems fast—most resolved same-day.</p>
       </div>
       <div class="service-box">
-        <h4>Legacy Code Debugging</h4>
+        <h4>🔧 Legacy Code Rescue</h4>
         <p>Track down bugs in old PHP code that nobody wants to touch. I work with messy, undocumented codebases and get them working again.</p>
       </div>
       <div class="service-box">
-        <h4>Performance Issues</h4>
+        <h4>⚡ Performance Optimization</h4>
         <p>Slow queries? Pages timing out? Memory errors? I identify bottlenecks and optimize code and database queries for better performance.</p>
       </div>
       <div class="service-box">
-        <h4>Code Refactoring</h4>
+        <h4>♻️ Code Refactoring</h4>
         <p>Clean up messy code, improve security, remove technical debt. Make your codebase easier to maintain without breaking existing functionality.</p>
       </div>
       <div class="service-box">
-        <h4>Database Optimization</h4>
+        <h4>💾 Database Optimization</h4>
         <p>Fix slow queries with proper indexing, optimize table structures, improve database design. Keep your app fast as data grows.</p>
       </div>
       <div class="service-box">
-        <h4>Security Fixes</h4>
+        <h4>🔒 Security Fixes</h4>
         <p>Patch SQL injection vulnerabilities, fix XSS issues, secure file uploads, improve authentication. Make your app safe from common attacks.</p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="service-category">
     <h2>Custom Development</h2>
     <div class="highlight-box">
       <p><strong>For complex applications, I use Laravel.</strong> It's a modern PHP framework that provides structure, security, and best practices out of the box. For simpler projects or when working with existing code, I work in standard PHP. The goal is always the same: clean, working code that solves your problem.</p>
     </div>
     <div class="services">
       <div class="service-box">
-        <h4>Full Application Development</h4>
+        <h4>🏗️ Full Application Development</h4>
         <p>Build complete web applications from scratch. Database design, backend logic, frontend implementation, testing—delivered in days, not weeks.</p>
       </div>
       <div class="service-box">
-        <h4>Feature Development</h4>
+        <h4>✨ Feature Development</h4>
         <p>Add new functionality to existing applications. User management, reporting systems, integrations, dashboards—whatever you need built.</p>
       </div>
       <div class="service-box">
-        <h4>API Development</h4>
+        <h4>🔌 API Development</h4>
         <p>Build RESTful APIs for mobile apps or third-party integrations. Clean, documented endpoints with proper authentication and error handling.</p>
       </div>
       <div class="service-box">
-        <h4>Database Design & Migration</h4>
+        <h4>🗄️ Database Design & Migration</h4>
         <p>Design efficient database structures from scratch or migrate data from legacy systems. Proper relationships, indexing, and data integrity.</p>
       </div>
       <div class="service-box">
-        <h4>Third-Party Integrations</h4>
+        <h4>🔗 Third-Party Integrations</h4>
         <p>Connect your app to payment processors, email services, shipping APIs, CRMs—any service with an API can be integrated.</p>
       </div>
       <div class="service-box">
-        <h4>Admin Panels & Dashboards</h4>
+        <h4>⚙️ Admin Panels & Dashboards</h4>
         <p>Build backend interfaces for managing content, users, orders, or data. Clean, functional interfaces that make administration easy.</p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="service-category">
     <h2>Additional Services</h2>
     <div class="services">
       <div class="service-box">
-        <h4>Project Management & Tracking</h4>
+        <h4>📋 Project Management</h4>
         <p>Set up development workflows, track bugs and features, coordinate team work. I can manage your development project or set up systems for your team.</p>
       </div>
       <div class="service-box">
-        <h4>Technical Documentation</h4>
+        <h4>📚 Technical Documentation</h4>
         <p>Write clear documentation for APIs, codebases, deployment processes. Make knowledge accessible for your team or future developers.</p>
       </div>
       <div class="service-box">
-        <h4>Data Analysis & Reporting</h4>
+        <h4>📊 Data Analysis & Reporting</h4>
         <p>Extract insights from databases, build custom reports, create dashboards. Turn your data into actionable information.</p>
       </div>
       <div class="service-box">
-        <h4>Excel/Access Automation (VBA)</h4>
+        <h4>📈 Excel/Access Automation (VBA)</h4>
         <p>Automate repetitive spreadsheet tasks, build complex Excel tools, create Access databases. Save hours of manual data work.</p>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Tech Stack</h2>
+  <section class="service-category">
+    <h2>Technology Stack</h2>
     
     <h3>Core Technologies</h3>
     <div class="tech-badges">
@@ -196,45 +148,64 @@
       <span>Data Analysis</span>
     </div>
   </section>
+
+  <section class="cta-section">
+    <h2>Ready to Get Started?</h2>
+    <p>Let's discuss your project and how I can help.</p>
+    <a href="contact.html" class="btn btn-primary">Contact Me</a>
+  </section>
 </div>
 
 <footer>
   <div class="container">
-    <div>
-      <h4>PHPDev</h4>
-      <p>PHP bug fixes, maintenance & custom development.<br>100+ projects delivered since 2019.</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>PHPDev</h4>
+        <p>PHP bug fixes, legacy code rescue & custom development.</p>
+        <p class="footer-tagline">100+ projects delivered since 2019</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Expertise</h4>
+        <ul>
+          <li>PHP & Laravel</li>
+          <li>MySQL / MariaDB</li>
+          <li>JavaScript & jQuery</li>
+          <li>HTML5, CSS3, Bootstrap</li>
+          <li>Legacy Code Rescue</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul class="social-links">
+          <li><a href="mailto:phpdev2026@outlook.com">📧 Email</a></li>
+          <li><a href="https://github.com/PHPDev2026" target="_blank" rel="noopener">💻 GitHub</a></li>
+          <li><a href="https://linkedin.com/in/phpdev2026" target="_blank" rel="noopener">💼 LinkedIn</a></li>
+        </ul>
+        <p class="rate-info">£30-50/hour</p>
+      </div>
     </div>
-    <div>
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="work.html">Sample Work</a></li>
-        <li><a href="process.html">How It Works</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PHPDev. All rights reserved.</p>
     </div>
-    <div>
-      <h4>Core Skills</h4>
-      <ul>
-        <li>PHP & Laravel</li>
-        <li>MySQL / MariaDB</li>
-        <li>JavaScript & jQuery</li>
-        <li>HTML5, CSS3, Bootstrap</li>
-      </ul>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:phpdev2026@outlook.com">phpdev2026@outlook.com</a></li>
-        <li><a href="https://github.com/PHPDev2026" target="_blank">GitHub Profile</a></li>
-        <li>£30-50/hour</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 PHPDev. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+document.querySelector('.mobile-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-menu').classList.toggle('active');
+  this.classList.toggle('active');
+});
+</script>
 
 </body>
 </html>
