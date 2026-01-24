@@ -693,10 +693,12 @@ h4 {
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition);
+  border-left: 4px solid var(--primary);
 }
 
 .service-box:hover {
   transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .service-box h4 {
@@ -707,6 +709,19 @@ h4 {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.6;
+}
+
+.service-category {
+  margin: var(--spacing-xl) 0;
+}
+
+.service-category h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.service-category > p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-muted);
 }
 
 .highlight-box {
