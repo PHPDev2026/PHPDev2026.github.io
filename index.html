@@ -3,15 +3,601 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Contact PHP & Laravel Developer for bug fixes, refactoring & custom development. UK-based, fast quotes, transparent pricing.">
-<title>PHP & Laravel Developer - Bug Fixes, Refactoring & Custom Development</title>
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="PHP & Laravel Developer | Bug fixes, code refactoring, legacy rescue & custom website development. UK-based, fast delivery.">
+<title>PHP & Laravel Developer | Bug Fixes, Refactoring & Custom Development</title>
+<style>
+/* Base Styles */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #64748b;
+  --dark: #1e293b;
+  --light: #f8fafc;
+  --border: #e2e8f0;
+  --success: #10b981;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--light);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--primary);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark);
+  transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: #dbeafe;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Sections */
+section {
+  padding: 4rem 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+/* Why Section */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.why-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Services */
+.services-preview {
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  padding: 3rem;
+  margin: 2rem 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.service-preview {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Process Steps */
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+.step-number {
+  background: var(--primary);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.pricing-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+  box-shadow: var(--card-shadow);
+}
+
+.pricing-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+/* FAQ */
+.faq-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: var(--card-shadow);
+}
+
+/* Projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.project-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  border-top: 4px solid var(--primary);
+}
+
+.project-card.featured {
+  border-color: var(--success);
+}
+
+.featured-badge {
+  display: inline-block;
+  background: var(--success);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.project-features {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.project-features li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.project-features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success);
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Tech Grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.tech-column {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-badges span {
+  background: #e2e8f0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+}
+
+/* Contact */
+.contact-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  margin: 2rem 0;
+}
+
+.contact-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-item a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.cta-highlight {
+  background: #eff6ff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  border-radius: 10px;
+  margin: 3rem 0;
+}
+
+.cta-section h2 {
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark);
+  color: white;
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: white;
+}
+
+.social-links {
+  margin-bottom: 1rem;
+}
+
+.rate-info {
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #334155;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .process-step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .services-preview {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-cta .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .project-links {
+    flex-direction: column;
+  }
+}
+</style>
 </head>
 <body>
 <nav>
   <div class="container">
     <div class="logo">PHP & Laravel Dev</div>
-    <button class="mobile-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <button class="mobile-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul class="nav-menu">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#services">Services</a></li>
@@ -22,135 +608,539 @@
   </div>
 </nav>
 
-<!-- HERO SECTION (from index.html) -->
 <section id="home" class="hero">
   <div class="hero-content">
     <h1>PHP & Laravel Developer</h1>
     <p class="tagline">Bug fixes, code refactoring, legacy rescue & custom web development</p>
+    <p class="hero-description">
+      I fix broken PHP/Laravel applications, refactor messy codebases, and build complete websites from scratch. 
+      From urgent production bugs to full-stack applications, I deliver working code fast.
+    </p>    
     <div class="stats">
-      <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">Projects Fixed & Built</span></div>
-      <div class="stat-item"><span class="stat-number">7+ Years</span><span class="stat-label">PHP/Laravel Experience</span></div>
-      <div class="stat-item"><span class="stat-number">Same Day</span><span class="stat-label">Most Bug Fixes</span></div>
-      <div class="stat-item"><span class="stat-number">UK-Based</span><span class="stat-label">GMT Timezone</span></div>
+      <div class="stat-item">
+        <span class="stat-number">100+</span>
+        <span class="stat-label">Projects Fixed & Built</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">7+ Years</span>
+        <span class="stat-label">PHP/Laravel Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Same Day</span>
+        <span class="stat-label">Most Bug Fixes</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">UK-Based</span>
+        <span class="stat-label">GMT Timezone</span>
+      </div>
     </div>
-    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Get In Touch</a>
+    </div>
   </div>
 </section>
 
 <div class="container">
-  <!-- WHY CHOOSE ME (from index.html) -->
-  <section id="services" class="why-section">
+  <section class="why-section">
     <h2>Why Clients Choose Me</h2>
     <div class="why-grid">
-      <div class="why-card"><div class="card-icon">🔧</div><h3>Root Cause Bug Fixes</h3><p>I find the actual root cause so issues don't return next month.</p></div>
-      <div class="why-card"><div class="card-icon">⚡</div><h3>Fast Delivery</h3><p>Bugs: same/next day. Complete sites: 5-10 days.</p></div>
-      <div class="why-card"><div class="card-icon">♻️</div><h3>Codebase Rescue</h3><p>100+ messy PHP/Laravel projects cleaned up.</p></div>
-      <div class="why-card"><div class="card-icon">🎯</div><h3>Plan First</h3><p>Works first time. No endless fixes.</p></div>
+      <div class="why-card">
+        <div class="card-icon">🔧</div>
+        <h3>Root Cause Bug Fixes</h3>
+        <p>Most developers apply quick patches. I find the actual root cause so issues don't return next month.</p>
+      </div>
+      <div class="why-card">
+        <div class="card-icon">⚡</div>
+        <h3>Fast, Realistic Delivery</h3>
+        <p>Bugs: same/next day. Features: 1-3 days. Complete sites: 5-10 days. No inflated timelines.</p>
+      </div>
+      <div class="why-card">
+        <div class="card-icon">♻️</div>
+        <h3>Codebase Rescue Expert</h3>
+        <p>100+ messy PHP/Laravel projects cleaned up. I make undocumented codebases maintainable again.</p>
+      </div>
+      <div class="why-card">
+        <div class="card-icon">🎯</div>
+        <h3>Plan First, Code Second</h3>
+        <p>Most implementations work first time. No endless "let me fix that" follow-ups.</p>
+      </div>
+      <div class="why-card">
+        <div class="card-icon">💬</div>
+        <h3>Clear Communication</h3>
+        <p>Plain English updates, not jargon. You'll always know exactly what's happening and why.</p>
+      </div>
+      <div class="why-card">
+        <div class="card-icon">📋</div>
+        <h3>Full Transparency</h3>
+        <p>Every change documented: what broke, how it's fixed, what was tested. No mystery charges.</p>
+      </div>
     </div>
   </section>
 
-  <!-- SERVICES OVERVIEW (condensed from services.html) -->
-  <section class="services-preview">
+  <section id="services">
     <h2>What I Deliver</h2>
     <div class="services-grid">
-      <div class="service-preview"><h3>🔴 Emergency Bug Fixes</h3><p>Critical errors, broken forms—most fixed same day.</p></div>
-      <div class="service-preview"><h3>♻️ Code Refactoring</h3><p>Clean up messy PHP/Laravel, improve security.</p></div>
-      <div class="service-preview"><h3>🏗️ Website Development</h3><p>Complete responsive sites + PHP/Laravel backend.</p></div>
-      <div class="service-preview"><h3>🔧 Legacy Rescue</h3><p>Untangle old PHP codebases.</p></div>
+      <div class="service-preview">
+        <h3>🔴 Emergency Bug Fixes</h3>
+        <p>Critical errors, broken forms, loading issues—most fixed same day.</p>
+      </div>
+      <div class="service-preview">
+        <h3>♻️ Code Refactoring</h3>
+        <p>Clean up messy PHP/Laravel, improve security, remove technical debt.</p>
+      </div>
+      <div class="service-preview">
+        <h3>🏗️ Website Development</h3>
+        <p>Complete responsive sites: HTML/CSS/JS + PHP/Laravel backend.</p>
+      </div>
+      <div class="service-preview">
+        <h3>🔧 Legacy Code Rescue</h3>
+        <p>Untangle old, undocumented PHP codebases and make them reliable.</p>
+      </div>
     </div>
+
+    <div class="services-preview">
+      <h2>🔴 Bug Fixes & Maintenance</h2>
+      <p>Most of my work: fixing broken code and keeping applications running reliably.</p>
+      <div class="services-grid">
+        <div class="service-preview">
+          <h4>Emergency Bug Fixes</h4>
+          <p>Critical errors breaking your site—pages not loading, broken forms, database issues. Most fixed same/next day.</p>
+        </div>
+        <div class="service-preview">
+          <h4>Legacy Code Rescue</h4>
+          <p>Debug and fix old PHP codebases that nobody else wants to touch. I make undocumented applications reliable again.</p>
+        </div>
+        <div class="service-preview">
+          <h4>Performance Optimization</h4>
+          <p>Slow queries, timeouts, memory issues. I identify bottlenecks and make your app run faster.</p>
+        </div>
+        <div class="service-preview">
+          <h4>Security Hardening</h4>
+          <p>Fix SQL injection, XSS vulnerabilities, weak authentication. Make your application secure from common attacks.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-preview">
+      <h2>♻️ Code Refactoring & Cleanup</h2>
+      <p>Transform messy, unmaintainable code into clean, secure, scalable applications.</p>
+      <div class="services-grid">
+        <div class="service-preview">
+          <h4>PHP Refactoring</h4>
+          <p>Modernize legacy PHP: add type hints, improve structure, remove duplication, follow best practices.</p>
+        </div>
+        <div class="service-preview">
+          <h4>Laravel Refactoring</h4>
+          <p>Restructure controllers, services, models. Add proper middleware, policies, and testing foundations.</p>
+        </div>
+        <div class="service-preview">
+          <h4>Technical Debt Removal</h4>
+          <p>Eliminate code smells, improve readability, make future maintenance 10x easier.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-preview">
+      <h2>🏗️ Custom Development</h2>
+      <p><strong>Simple sites:</strong> HTML/CSS/JS + PHP. <strong>Complex applications:</strong> Laravel (APIs, Eloquent, Blade). Clean, secure code that scales.</p>
+      <div class="services-grid">
+        <div class="service-preview">
+          <h4>Complete Websites</h4>
+          <p>Responsive HTML/CSS/JS frontend + PHP backend. Forms, user auth, admin panels, databases.</p>
+        </div>
+        <div class="service-preview">
+          <h4>Laravel Applications</h4>
+          <p>Full-stack apps: user management, dashboards, APIs, payments. Built with modern Laravel best practices.</p>
+        </div>
+        <div class="service-preview">
+          <h4>Feature Development</h4>
+          <p>Add new functionality: reporting, integrations, workflows. Works with existing PHP/Laravel codebases.</p>
+        </div>
+        <div class="service-preview">
+          <h4>RESTful APIs</h4>
+          <p>Clean, documented endpoints for mobile apps or frontend SPAs. Proper auth, validation, error handling.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="service-category">
+      <h2>💻 Technology Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-column">
+          <h4>Core</h4>
+          <div class="tech-badges">
+            <span>PHP 7+/8+</span>
+            <span>Laravel (APIs, Eloquent)</span>
+            <span>HTML5/CSS3/JS</span>
+            <span>SQL/MariaDB</span>
+          </div>
+        </div>
+        <div class="tech-column">
+          <h4>Specialties</h4>
+          <div class="tech-badges">
+            <span>Bug Fixes</span>
+            <span>Refactoring</span>
+            <span>Legacy Rescue</span>
+            <span>Performance</span>
+          </div>
+        </div>
+        <div class="tech-column">
+          <h4>Tools</h4>
+          <div class="tech-badges">
+            <span>Bootstrap</span>
+            <span>PHPMailer</span>
+            <span>Stripe</span>
+            <span>Git/GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
 
-  <!-- PROCESS (condensed from process.html) -->
-  <section id="process" class="process-section">
-    <h2>🔢 5-Step Process</h2>
-    <div class="process-steps">
-      <div class="process-step"><div class="step-number">1</div><div class="step-content"><h4>Assessment</h4><p>Quote within 24hrs. No pressure.</p></div></div>
-      <div class="process-step"><div class="step-number">2</div><div class="step-content"><h4>Agreement</h4><p>Clear scope & timeline.</p></div></div>
-      <div class="process-step"><div class="step-number">3</div><div class="step-content"><h4>Progress</h4><p>Daily written updates.</p></div></div>
-      <div class="process-step"><div class="step-number">4</div><div class="step-content"><h4>Testing</h4><p>Full QA before delivery.</p></div></div>
-      <div class="process-step"><div class="step-number">5</div><div class="step-content"><h4>Support</h4><p>7 days free support.</p></div></div>
-    </div>
-  </section>
-
-  <!-- WORK SAMPLES (condensed from work.html) -->
   <section id="work">
-    <h2>🏗️ Real Results</h2>
+    <h2>Real Results</h2>
+    <p>Complete projects and code examples showing exactly how I solve PHP/Laravel problems.</p>
+    
     <div class="projects">
       <div class="project-card featured">
-        <span class="featured-badge">FULL-STACK</span>
+        <span class="featured-badge">FULL-STACK WEBSITE</span>
         <h3>Professional Services Website</h3>
-        <p>Complete responsive site with PHP contact form + admin.</p>
-        <a href="https://github.com/PHPDev2026/screenshots-poc" target="_blank" class="btn btn-primary">View →</a>
+        <p>Complete responsive portfolio site with working PHP contact form, services pages, admin capabilities.</p>
+        <p><strong>Tech:</strong> HTML5/CSS3/JS + PHP + PHPMailer + responsive design</p>
+        <p><strong>Delivered:</strong> Clean, fast-loading site ready for production deployment.</p>
+        <ul class="project-features">
+          <li>Server-side form validation & spam protection</li>
+          <li>Fully responsive across all devices</li>
+          <li>Modular CSS + semantic HTML</li>
+          <li>Production-ready contact form</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/PHPDev2026/screenshots-poc" target="_blank" rel="noopener" class="btn btn-primary">Screenshot POC →</a>
+        </div>
       </div>
+
       <div class="project-card featured">
-        <span class="featured-badge">ECOMMERCE</span>
-        <h3>eCommerce + Stripe Payments</h3>
-        <p>Full-stack shop with admin CRUD & secure checkout.</p>
-        <a href="https://github.com/PHPDev2026/screenshots-poc" target="_blank" class="btn btn-primary">View →</a>
+        <span class="featured-badge">ECOMMERCE + PAYMENTS</span>
+        <h3>eCommerce Site with Stripe</h3>
+        <p>Full-stack shop with user dashboard, admin panel, product management, Stripe payment integration.</p>
+        <p><strong>Tech:</strong> HTML5/CSS3/JS + PHP + Stripe API + MySQL</p>
+        <p><strong>Delivered:</strong> Complete eCommerce platform ready for your Stripe keys.</p>
+        <ul class="project-features">
+          <li>User registration/login + profile management</li>
+          <li>Admin CRUD for products/inventory</li>
+          <li>Stripe checkout (activate with your API keys)</li>
+          <li>Responsive product catalog</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/PHPDev2026/screenshots-poc" target="_blank" rel="noopener" class="btn btn-primary">Screenshot POC →</a>
+        </div>
+      </div>
+    </div>
+
+    <h3>⚡ What Clients Get</h3>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="card-icon">🎯</div>
+        <h3>Problem → Solution Focus</h3>
+        <p>Every project starts with understanding your exact problem, not just slapping code together.</p>
+      </div>
+      <div class="why-card">
+        <div class="card-icon">📈</div>
+        <h3>Performance Obsessed</h3>
+        <p>Fast queries, optimized assets, clean architecture. Your app scales from day one.</p>
+      </div>
+      <div class="why-card">
+        <div class="card-icon">🔒</div>
+        <h3>Secure By Default</h3>
+        <p>Validation, sanitization, auth checks. No security holes left behind.</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT & PRICING (from contact.html) -->
-  <section id="contact" class="contact-content">
-    <div class="availability"><h3>✅ Currently Available</h3><p>UK-based (GMT). Response within hours.</p></div>
+  <section id="process">
+    <h2>How I Work</h2>
+    <p>Straightforward process. No surprises. Just working code delivered on time.</p>
     
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Project Assessment</h4>
+          <p>You describe the problem/project. I ask targeted questions and give you an honest timeline + cost estimate within 24hrs. No pressure.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Clear Agreement</h4>
+          <p>Written scope, deliverables, timeline, and cost. Once agreed, I start immediately. No scope creep, no surprises.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Daily Progress</h4>
+          <p>I work and send written updates: what's done, what's next, any issues found. Async communication works across timezones.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Testing & Validation</h4>
+          <p>Comprehensive testing throughout + final QA before delivery. Edge cases covered. Nothing broken gets shipped.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h4>Delivery + Support</h4>
+          <p>Clean, documented code delivered. 7 days free support to fix any deployment issues or bugs from my work.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>⏱️ Typical Turnaround</h3>
+    <div class="pricing-grid">
+      <div class="pricing-item">
+        <strong>🔴 Bug Fixes</strong>
+        <span>Same/Next day (90% of cases)</span>
+      </div>
+      <div class="pricing-item">
+        <strong>♻️ Refactoring</strong>
+        <span>1-5 days (codebase dependent)</span>
+      </div>
+      <div class="pricing-item">
+        <strong>🏗️ Features</strong>
+        <span>1-4 days</span>
+      </div>
+      <div class="pricing-item">
+        <strong>🐘 PHP Sites</strong>
+        <span>3-7 days</span>
+      </div>
+      <div class="pricing-item">
+        <strong>🚀 Laravel Apps</strong>
+        <span>7-21 days (scope dependent)</span>
+      </div>
+    </div>
+
+    <h3>❓ Frequently Asked Questions</h3>
+    <div class="faq-item">
+      <h4>What's your timezone?</h4>
+      <p>UK-based (GMT/BST). Async text communication works perfectly across timezones—no need for live calls.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can you work on messy/legacy code?</h4>
+      <p>Yes. Most of my work is untangling undocumented PHP codebases and making them reliable again.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Laravel or plain PHP?</h4>
+      <p>Laravel for complex apps (APIs, auth, admin panels). Plain PHP + HTML for simpler sites or existing codebases.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What about NDAs/contracts?</h4>
+      <p>Happy to sign standard NDAs or work agreements. Your code/data stays 100% confidential regardless.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Post-delivery changes?</h4>
+      <p>7 days free support for bugs caused by my work. Additional changes quoted separately at normal rates.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Payment terms?</h4>
+      <p>PayPal invoices. Projects £500+: 50% deposit. Final payment within 14 days. Urgent work: +50% premium.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do you handle hosting, deployment, or databases?</h4>
+      <p>I focus purely on the code: I fix bugs, refactor, or build your application, then deliver clean, working files back to you. You handle hosting, server setup, database management, and deployment (or your hosting provider does).</p>
+    </div>
+    <div class="faq-item">
+      <h4>What if you can't fix my issue?</h4>
+      <p>I'll tell you upfront during assessment. No charge for initial review if it's outside my expertise.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Get In Touch</h2>
+    <p>Broken code, messy codebase, or new project? Get an honest assessment and quote within 24 hours.</p>
+    
+    <div class="availability">
+      <h3>✅ Currently Available</h3>
+      <p>Accepting new projects. Typical response: within hours. UK-based (GMT/BST timezone).</p>
+    </div>
+
     <div class="contact-box">
-      <h2>Get Quote Fast</h2>
-      <div class="contact-item"><h3>📧 <a href="mailto:phpdev2026@outlook.com">Email</a></h3><p>Best for project details & quotes.</p></div>
-      <div class="contact-item"><h3>💻 <a href="https://github.com/PHPDev2026">GitHub</a></h3><p>Review my code samples.</p></div>
+      <h3>Get Quote Fast</h3>
+      <div class="contact-item">
+        <h4>📧 <a href="mailto:phpdev2026@outlook.com" target="_blank" rel="noopener">Email</a></h4>
+        <p>Best for project details, code review requests, quotes. I respond same/next day.</p>
+      </div>
+      <div class="contact-item">
+        <h4>💻 <a href="https://github.com/PHPDev2026" target="_blank" rel="noopener">GitHub</a></h4>
+        <p>Review my recent work, code samples, and project contributions.</p>
+      </div>
       <div class="contact-item cta-highlight">
-        <h3>🚀 Fastest: Google Form</h3>
-        <a href="https://docs.google.com/forms/d/136PWtMDNqIGicXAZo62V63ayl6vbj4O1Pcrxjj0PST0/edit" target="_blank">Fill Form → Quote in 24hrs</a>
+        <h4>🚀 <strong>Fastest: Google Form Quote</strong></h4>
+        <p>Get accurate quote in 24hrs. Include GitHub URL = same-day response possible.</p>
+        <a href="https://docs.google.com/forms/d/136PWtMDNqIGicXAZo62V63ayl6vbj4O1Pcrxjj0PST0/edit" target="_blank" rel="noopener">
+          Fill Form → Quote in 24hrs
+        </a>
       </div>
 
       <div class="rate-box">
-        <h3>Rates</h3>
+        <h3>Rates & Project Pricing</h3>
         <div class="pricing-grid">
-          <div class="pricing-item"><strong>🔴 Bug Fixes</strong><br>£50-250 (1-4hrs)</div>
-          <div class="pricing-item"><strong>♻️ Refactoring</strong><br>£200-1k</div>
-          <div class="pricing-item"><strong>🚀 Laravel Apps</strong><br>£1.5k-5k+</div>
+          <div class="pricing-item">
+            <strong>🔴 Bug Fixes</strong>
+            <span>1-4 hours: £50-250<br>Most fixed same/next day</span>
+          </div>
+          <div class="pricing-item">
+            <strong>♻️ Refactoring</strong>
+            <span>Quoted after code review<br>Typical: £200-1k</span>
+          </div>
+          <div class="pricing-item">
+            <strong>🏗️ HTML/CSS/JS Sites</strong>
+            <span>Static/responsive sites<br>1-3 days: £300-800</span>
+          </div>
+          <div class="pricing-item">
+            <strong>🐘 PHP Websites</strong>
+            <span>Forms, auth, basic CMS<br>3-7 days: £600-1.5k</span>
+          </div>
+          <div class="pricing-item">
+            <strong>🚀 Laravel Apps</strong>
+            <span>Full-stack, APIs, admin<br>Quoted after scope: £1.5k-5k+</span>
+          </div>
+          <div class="pricing-item">
+            <strong>📅 Monthly Retainers</strong>
+            <span>Ongoing support<br>£500-2k/month (5-20 hrs)</span>
+          </div>
         </div>
-        <p><strong>PayPal</strong> | 50% deposit over £500 | Urgent: +50%</p>
+        <div class="payment-terms">
+          <p><strong>Payment:</strong> PayPal invoices<br>
+          <strong>Projects £500+:</strong> 50% deposit<br>
+          <strong>Final payment:</strong> 14 days<br>
+          <strong>Urgent (+50%):</strong> 24-72hr delivery</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="what-to-include">
+      <h3>Include This For Fast Quotes</h3>
+      <ul>
+        <li><strong>Problem/Project:</strong> What needs fixing or building?</li>
+        <li><strong>Goal:</strong> What should it do when complete?</li>
+        <li><strong>Errors:</strong> Screenshots, error messages, or symptoms</li>
+        <li><strong>Timeline:</strong> When do you need it done?</li>
+        <li><strong>Budget:</strong> Your target range helps me quote accurately</li>
+        <li><strong>Tech:</strong> PHP version, Laravel, database type</li>
+        <li><strong>Bonus:</strong> GitHub repo link for instant code review</li>
+      </ul>
+      <p>More details = faster, more accurate quotes. No spam, no hard sell—just honest advice on timeline and cost.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="card-icon">⚡</div>
+        <h3>Fast Response</h3>
+        <p>24hr response guaranteed. Urgent issues: usually within hours.</p>
+      </div>
+      <div class="why-card">
+        <div class="card-icon">💰</div>
+        <h3>Accurate Quotes</h3>
+        <p>No surprises. You'll know exact cost and timeline upfront.</p>
+      </div>
+      <div class="why-card">
+        <div class="card-icon">🔒</div>
+        <h3>100% Confidential</h3>
+        <p>NDAs available. Your code and business stay private.</p>
       </div>
     </div>
   </section>
+
+  <section class="cta-section">
+    <h2>Need Code Fixed or Built?</h2>
+    <p>Urgent bug, messy codebase, or complete new website—let's discuss how I can help.</p>
+    <a href="#contact" class="btn btn-primary">Get Started</a>
+  </section>
 </div>
 
-<!-- FOOTER (unchanged) -->
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-col"><h4>PHP & Laravel Dev</h4><p>UK-based specialist: bug fixes & custom development.</p><p>100+ projects since 2019</p></div>
-      <div class="footer-col"><h4>Skills</h4><ul><li>PHP 8+ & Laravel</li><li>HTML5/CSS3/JS</li><li>SQL/MariaDB</li><li>Bug Fixes</li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:phpdev2026@outlook.com">📧 Email</a></li><li><a href="https://github.com/PHPDev2026">💻 GitHub</a></li></ul><p>From £30/hour</p></div>
+      <div class="footer-col">
+        <h4>PHP & Laravel Dev</h4>
+        <p>UK-based PHP/Laravel specialist: bug fixes, refactoring & custom development.</p>
+        <p class="footer-tagline">100+ projects delivered since 2019</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Core Skills</h4>
+        <ul>
+          <li>PHP 7+/8+ & Laravel</li>
+          <li>HTML5, CSS3, JavaScript</li>
+          <li>SQL / MariaDB</li>
+          <li>Bug Fixes & Refactoring</li>
+          <li>Website Development</li>
+          <li>Legacy Code Rescue</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul class="social-links">
+          <li><a href="mailto:phpdev2026@outlook.com">📧 Email</a></li>
+          <li><a href="https://www.github.com/PHPDev2026" target="_blank" rel="noopener">💻 GitHub</a></li>
+        </ul>
+        <p class="rate-info">From £30/hour</p>
+      </div>
     </div>
-    <div class="footer-bottom"><p>© 2026 PHP & Laravel Dev</p></div>
+    <div class="footer-bottom">
+      <p>© 2026 PHP & Laravel Dev. All rights reserved.</p>
+    </div>
   </div>
 </footer>
 
 <script>
-// Mobile menu + smooth scroll + active nav (GitHub Pages ready)
-document.querySelector('.mobile-toggle').addEventListener('click', function(){
+// Mobile menu toggle
+document.querySelector('.mobile-toggle').addEventListener('click', function() {
   document.querySelector('.nav-menu').classList.toggle('active');
   this.classList.toggle('active');
 });
 
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e){
+  anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
-  });
-});
-
-window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section[id]');
-  const scrollPos = window.scrollY + 100;
-  sections.forEach(section => {
-    const navLink = document.querySelector(`a[href="#${section.id}"]`);
-    if(section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos){
-      document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
-      navLink.classList.add('active');
+    
+    if(this.getAttribute('href') === '#') return;
+    
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    
+    if(targetElement) {
+      // Update active nav link
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.classList.remove('active');
+      });
+      this.classList.add('active');
+      
+      // Smooth scroll to target
+      window.scrollTo({
+        top: targetElement.offsetTop - 80,
+        behavior: 'smooth'
+      });
+      
+      // Close mobile menu if open
+      if(window.innerWidth <= 768) {
+        document.querySelector('.nav-menu').classList.remove('active');
+        document.querySelector('.mobile-toggle').classList.remove('active');
+      }
     }
   });
 });
