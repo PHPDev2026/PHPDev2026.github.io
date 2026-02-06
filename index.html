@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="PHP & Laravel Developer | Bug fixes, code refactoring, legacy rescue & custom website development. UK-based, fast delivery.">
-<title>PHP & Laravel Developer | Bug Fixes, Refactoring & Custom Development</title>
+<meta name="description" content="PHP & Laravel developer for emergency bug fixes, refactoring, and custom builds. Get a clear quote in 24 hours. UK-based, fast delivery.">
+<title>PHP & Laravel Developer | Fast Bug Fixes & Refactoring</title>
 <style>
 /* Base Styles */
 :root {
@@ -128,6 +128,29 @@ nav .container {
   margin-right: auto;
 }
 
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.hero-badge {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.cta-note {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #dbeafe;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -225,6 +248,27 @@ h4 {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   max-width: 600px;
+}
+
+.proof-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.proof-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--success);
+}
+
+.proof-item strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--dark);
 }
 
 /* Services Section */
@@ -332,7 +376,58 @@ h4 {
   color: var(--dark);
 }
 
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.pricing-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  border-top: 4px solid var(--primary);
+}
+
+.pricing-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.pricing-card li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.pricing-card li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success);
+}
+
 /* FAQ */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
 .faq-item {
   background: white;
   padding: 0.75rem;
@@ -418,6 +513,41 @@ h4 {
   border-radius: 10px;
   box-shadow: var(--card-shadow);
   margin: 2rem 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  justify-self: start;
 }
 
 .contact-item {
@@ -512,78 +642,6 @@ footer {
   font-size: 0.875rem;
 }
 
-/* Time Breakdown Styles */
-.time-breakdown {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: var(--card-shadow);
-}
-
-.time-category {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.time-category:last-child {
-  border-bottom: none;
-}
-
-.time-category h3 {
-  margin-bottom: 1rem;
-  color: var(--dark);
-}
-
-.breakdown-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.75rem;
-}
-
-.breakdown-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.35rem 0.5rem;
-  background: #f8fafc;
-  border-radius: 6px;
-  border-left: 3px solid var(--primary);
-}
-
-.breakdown-item.total {
-  background: #eff6ff;
-  border-left: 3px solid var(--primary-dark);
-  font-weight: 600;
-}
-
-.breakdown-item strong {
-  color: var(--dark);
-  font-size: 0.9rem;
-}
-
-.breakdown-item span {
-  color: var(--primary);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.breakdown-item.total span {
-  color: var(--primary-dark);
-}
-
-.calculation-note {
-  background: #f0f9ff;
-  padding: 0.75rem;
-  border-radius: 8px;
-  margin-top: 2rem;
-  border-left: 4px solid var(--primary);
-}
-
-.calculation-note p {
-  margin-bottom: 0.5rem;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .mobile-toggle {
@@ -669,6 +727,8 @@ footer {
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#process">Process</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -676,12 +736,17 @@ footer {
 
 <section id="home" class="hero">
   <div class="hero-content">
-    <h1>PHP & Laravel Developer</h1>
-    <p class="tagline">Bug fixes, code refactoring, legacy rescue & custom web development</p>
+    <h1>Fast PHP &amp; Laravel fixes that unblock your business</h1>
+    <p class="tagline">Emergency bug fixes, refactoring, and custom builds with clear 24-hour quotes.</p>
     <p class="hero-description">
-      I fix broken PHP/Laravel applications, refactor messy codebases, and build complete websites from scratch. 
-      From urgent production bugs to full-stack applications, I deliver working code fast.
+      I help teams and founders ship reliable PHP/Laravel code fast: fixing production bugs, cleaning legacy
+      systems, and delivering new features without the usual delays.
     </p>    
+    <div class="hero-badges">
+      <span class="hero-badge">✅ 100+ projects delivered</span>
+      <span class="hero-badge">⏱️ Same/next-day fixes</span>
+      <span class="hero-badge">🇬🇧 UK-based (GMT/BST)</span>
+    </div>
     <div class="stats">
       <div class="stat-item">
         <span class="stat-number">100+</span>
@@ -697,12 +762,30 @@ footer {
       </div>
     </div>
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">Get In Touch</a>
+      <a href="#contact" class="btn btn-primary">Get a 24-hour Quote</a>
+      <a href="#work" class="btn btn-outline">See Results</a>
+      <div class="cta-note">No calls required. Clear written updates only.</div>
     </div>
   </div>
 </section>
 
 <div class="container">
+  <section aria-label="Quick proof">
+    <div class="proof-bar">
+      <div class="proof-item">
+        <strong>Performance fixes</strong>
+        <span>Typical gains: 3x–15x faster load times.</span>
+      </div>
+      <div class="proof-item">
+        <strong>Refactoring</strong>
+        <span>Legacy PHP → clean, typed, maintainable code.</span>
+      </div>
+      <div class="proof-item">
+        <strong>Reliability</strong>
+        <span>Root-cause fixes so issues don’t return.</span>
+      </div>
+    </div>
+  </section>
   <!-- Services - Single Consolidated Section -->
   <section id="services">
     <h2>What I Specialize In</h2>
@@ -934,130 +1017,65 @@ footer {
     </div>
   </section>
 
-  <!-- Development Time Estimates -->
-  <section id="estimates">
-    <h2>Typical Development Timeframes</h2>
-    <p class="section-subtitle">Breakdown of how long each type of work actually takes</p>
-    
-    <div class="time-breakdown">
-      <div class="time-category">
-        <h3>📋 Code Review & Assessment</h3>
-        <div class="breakdown-grid">
-          <div class="breakdown-item">
-            <strong>Initial code review</strong>
-            <span>2 - 3 Hours</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>Testing</strong>
-            <span>3 - 6 Hours</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>Document findings</strong>
-            <span>2 - 3 Hours</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>Solution planning</strong>
-            <span>2 - 4 Hours</span>
-          </div>
-        </div>
+  <section id="pricing">
+    <h2>Simple, Transparent Pricing</h2>
+    <p class="section-subtitle">Clear starting points with fixed scope and fast delivery.</p>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Bug Fix Sprint</h3>
+        <div class="price">From £80</div>
+        <p>Ideal for urgent issues blocking customers or revenue.</p>
+        <ul>
+          <li>1–4 hour fixes</li>
+          <li>Root-cause analysis</li>
+          <li>Same/next-day delivery</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Request Fix</a>
       </div>
-      
-       <div class="time-category">
-        <h3>🏗️ HTML Websites</h3>
-        <div class="breakdown-grid">
-          <div class="breakdown-item">
-            <strong>Single responsive page</strong>
-            <span>1 - 4 Hours</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>Contact form </strong>
-            <span>1 - 2 Hours</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>5-page HTML site</strong>
-            <span>1 - 2 Days</span>
-          </div>
-        </div>
+      <div class="pricing-card">
+        <h3>Refactor & Cleanup</h3>
+        <div class="price">From £250</div>
+        <p>Turn messy PHP/Laravel into stable, maintainable code.</p>
+        <ul>
+          <li>Types & structure</li>
+          <li>Security hardening</li>
+          <li>Performance improvements</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
       </div>
-      
-      <div class="time-category">
-        <h3>🐘 PHP Websites</h3>
-        <div class="breakdown-grid">
-          <div class="breakdown-item">
-            <strong>User login/registration</strong>
-            <span>1 - 2 Hours</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>Simple CMS/Admin area</strong>
-            <span>2 - 3 Days</span>
-          </div>
-          <div class="breakdown-item total">
-            <strong>Complete PHP website</strong>
-            <span>2 - 4 Days</span>
-          </div>
-        </div>
+      <div class="pricing-card">
+        <h3>Custom Build</h3>
+        <div class="price">From £600</div>
+        <p>Full-stack sites or Laravel apps built to your specs.</p>
+        <ul>
+          <li>Responsive UI + backend</li>
+          <li>APIs & admin areas</li>
+          <li>Delivery in days, not weeks</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Start a Project</a>
       </div>
-      
-      <div class="time-category">
-        <h3>♻️ Code Refactoring</h3>
-        <div class="breakdown-grid">      
-          <div class="breakdown-item">
-            <strong>Clean 5 - 10 PHP functions</strong>
-            <span>2 - 8 Hours</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>SQL performance issues</strong>
-            <span>1 - 2 Days</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>Modernize Laravel</strong>
-            <span>2 - 4 Days</span>
-          </div>
-          <div class="breakdown-item total">
-            <strong>Codebase cleanup (PHP/HTML)</strong>
-            <span>2 - 3 Days</span>
-          </div>
-        </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <p class="section-subtitle">Fast answers to the questions clients ask most.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>How fast can you start?</h4>
+        <p>Most small fixes start same day. Larger work starts within 24–48 hours after review.</p>
       </div>
-      
-     <div class="time-category">
-        <h3>🔴 Bug Fixes</h3>
-        <div class="breakdown-grid">
-          <div class="breakdown-item">
-            <strong>Simple bugs</strong>
-            <span>2 - 6 Hours</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>Complex issues</strong>
-            <span>4 - 8 Hours</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>System wide issues</strong>
-            <span>1 - 3 Days</span>
-          </div>
-        </div>
+      <div class="faq-item">
+        <h4>Do you work with legacy PHP?</h4>
+        <p>Yes. I specialize in untangling legacy code, adding structure, and stabilizing it.</p>
       </div>
-          
-      <div class="time-category">
-        <h3>🚀 Laravel Applications</h3>
-        <div class="breakdown-grid">
-          <div class="breakdown-item">
-            <strong>Basic CRUD application</strong>
-            <span>2 - 3 Days</span>
-          </div>
-          <div class="breakdown-item">
-            <strong>Admin dashboard</strong>
-            <span>1 - 2 Days</span>
-          </div>
-          <div class="breakdown-item total">
-            <strong>Full Laravel application</strong>
-            <span>3 - 10 Days</span>
-          </div>
-        </div>
+      <div class="faq-item">
+        <h4>How do you quote work?</h4>
+        <p>You’ll receive a clear scope, delivery timeline, and cost estimate within 24 hours.</p>
       </div>
-      
-      <div class="calculation-note">
-        <p><strong>Hourly rate:</strong> £30/hour. You only pay for actual time worked, tracked and reported transparently.</p>
+      <div class="faq-item">
+        <h4>Do you offer ongoing support?</h4>
+        <p>Yes. Retainers are available for recurring fixes and improvements.</p>
       </div>
     </div>
   </section>
@@ -1068,10 +1086,46 @@ footer {
     <p class="section-subtitle">Available for new projects. UK-based (GMT/BST)</p>
     
     <div class="contact-box">
-      <div class="contact-item">
-        <h3>📧 <a href="mailto:phpdev2026@outlook.com" target="_blank" rel="noopener">Email</a></h3>
-         <h4>What information should I include?</h4>
-        <p>Brief description of your issue(s) or work you need done. Mention if theres a budget or timeline involved. Link to your GitHub repo if possible, so I can review files ahead of time. If you need to add/invite me, my username there is PHPDev2026</p>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-item">
+            <h3>📧 <a href="mailto:phpdev2026@outlook.com" target="_blank" rel="noopener">Email</a></h3>
+            <p>Send a short brief and I’ll respond within 24 hours with a clear quote.</p>
+          </div>
+          <div class="contact-item cta-highlight">
+            <h3>✅ What to include</h3>
+            <p>Problem summary, timeline, budget range, and a repo link if possible.</p>
+            <p>If you need to invite me on GitHub: <strong>PHPDev2026</strong>.</p>
+          </div>
+          <div class="contact-item">
+            <h4>Prefer a quick form?</h4>
+            <p><a href="https://docs.google.com/forms/d/136PWtMDNqIGicXAZo62V63ayl6vbj4O1Pcrxjj0PST0/edit" target="_blank" rel="noopener">Use my 24-hour quote form →</a></p>
+          </div>
+        </div>
+        <form class="contact-form" action="mailto:phpdev2026@outlook.com" method="post" enctype="text/plain">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@email.com" required>
+          </div>
+          <div>
+            <label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option>Bug fix</option>
+              <option>Refactor / cleanup</option>
+              <option>New feature</option>
+              <option>Custom build</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" placeholder="Describe the issue, deadline, and budget."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Request</button>
+        </form>
       </div>
     </div>
   </section>
@@ -1092,7 +1146,9 @@ footer {
           <li><a href="#services">Services</a></li>
           <li><a href="#work">Work Examples</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#contact">Contact & Pricing</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
