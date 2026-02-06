@@ -124,7 +124,6 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
-      margin: 1.5rem 0;
     }
 
     .badge {
@@ -136,56 +135,68 @@
       font-size: 0.9rem;
     }
 
-    .hero-cta {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      border: 2px solid transparent;
-    }
-
-    .btn-primary {
-      background: white;
-      color: var(--primary);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: white;
-      border-color: white;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: var(--primary);
-    }
-
     /* Sections */
     section {
       padding: 2.5rem 0;
-      border-bottom: 1px solid var(--border);
     }
 
-    section:last-of-type {
-      border-bottom: none;
+    section.alt {
+      background: var(--dark);
+      color: white;
+    }
+
+    section.alt h2 {
+      color: white;
+    }
+
+    section.alt h3 {
+      color: white;
+    }
+
+    section.alt h4 {
+      color: white;
+    }
+
+    section.alt .section-subtitle {
+      color: #cbd5e1;
+    }
+
+    section.alt .card {
+      background: #1e293b;
+      border-color: #334155;
+      color: white;
+    }
+
+    section.alt .card h3,
+    section.alt .card h4 {
+      color: white;
+    }
+
+    section.alt .card p {
+      color: #cbd5e1;
+    }
+
+    section.alt .card:hover {
+      border-color: var(--primary);
+    }
+
+    section.alt .tech-badge {
+      background: #334155;
+      color: #e2e8f0;
+    }
+
+    section.alt .faq-item {
+      background: #1e293b;
+      border-color: #334155;
+      color: white;
+    }
+
+    section.alt .faq-item h4 {
+      color: white;
+    }
+
+    section.alt .faq-item p {
+      color: #cbd5e1;
     }
 
     h2 {
@@ -202,6 +213,12 @@
       font-weight: 600;
     }
 
+    h4 {
+      font-size: 1rem;
+      color: var(--dark);
+      font-weight: 600;
+    }
+
     .section-subtitle {
       color: var(--text-secondary);
       font-size: 1rem;
@@ -211,14 +228,14 @@
     /* Grid Layouts */
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       margin: 1.5rem 0;
     }
 
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin: 1.5rem 0;
     }
@@ -243,6 +260,7 @@
     .card p {
       color: var(--text-secondary);
       font-size: 0.95rem;
+      margin-bottom: 0.75rem;
     }
 
     /* Tech Stack */
@@ -276,9 +294,27 @@
       border-left: 4px solid var(--primary);
     }
 
+    section.alt .project-card {
+      background: #1e293b;
+      border-left-color: var(--success);
+      color: white;
+    }
+
+    section.alt .project-card h3 {
+      color: white;
+    }
+
+    section.alt .project-card p {
+      color: #cbd5e1;
+    }
+
     .project-card.featured {
       border-left-color: var(--success);
-      background: #f0fdf4;
+    }
+
+    section.alt .project-card.featured {
+      background: #0f4f2d;
+      border-left-color: var(--success);
     }
 
     .featured-badge {
@@ -302,7 +338,10 @@
       position: relative;
       margin-bottom: 0.4rem;
       font-size: 0.95rem;
-      color: var(--text-secondary);
+    }
+
+    section.alt .project-card li {
+      color: #cbd5e1;
     }
 
     .project-card li:before {
@@ -328,7 +367,7 @@
     /* Process Steps */
     .step-group {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin: 1.5rem 0;
     }
@@ -340,16 +379,29 @@
       border: 1px solid var(--border);
     }
 
+    section.alt .step {
+      background: #1e293b;
+      border-color: #334155;
+      color: white;
+    }
+
+    section.alt .step h4 {
+      color: white;
+    }
+
+    section.alt .step p {
+      color: #cbd5e1;
+    }
+
     .step-number {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: var(--primary);
       color: white;
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-weight: 700;
       font-size: 0.9rem;
       margin-bottom: 0.75rem;
@@ -358,7 +410,7 @@
     /* Pricing Grid */
     .pricing-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin: 1.5rem 0;
     }
@@ -371,11 +423,30 @@
       border-top: 3px solid var(--primary);
     }
 
+    section.alt .pricing-card {
+      background: #1e293b;
+      border-color: #334155;
+      border-top-color: var(--success);
+      color: white;
+    }
+
+    section.alt .pricing-card h3 {
+      color: white;
+    }
+
+    section.alt .pricing-card p {
+      color: #cbd5e1;
+    }
+
     .price {
       font-size: 1.8rem;
       font-weight: 700;
       color: var(--primary);
       margin: 0.75rem 0;
+    }
+
+    section.alt .price {
+      color: var(--success);
     }
 
     .pricing-card ul {
@@ -390,11 +461,62 @@
       font-size: 0.9rem;
     }
 
+    section.alt .pricing-card li {
+      color: #cbd5e1;
+    }
+
     .pricing-card li:before {
       content: "→ ";
       color: var(--primary);
       font-weight: bold;
       margin-right: 0.5rem;
+    }
+
+    section.alt .pricing-card li:before {
+      color: var(--success);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #1e293b;
+      transform: translateY(-2px);
+    }
+
+    section.alt .btn-primary {
+      background: var(--success);
+      color: white;
+    }
+
+    section.alt .btn-primary:hover {
+      background: #047857;
+      transform: translateY(-2px);
     }
 
     /* FAQ */
@@ -425,21 +547,25 @@
       margin: 1.5rem 0;
     }
 
-    .contact-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+    section.alt .contact-box {
+      background: #1e293b;
+      border-color: #334155;
+      color: white;
     }
 
     .contact-info {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     .contact-item {
-      padding-bottom: 1rem;
       border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+
+    section.alt .contact-item {
+      border-bottom-color: #334155;
     }
 
     .contact-item:last-child {
@@ -453,6 +579,11 @@
     .contact-item p {
       color: var(--text-secondary);
       font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    section.alt .contact-item p {
+      color: #cbd5e1;
     }
 
     .contact-item a {
@@ -461,54 +592,12 @@
       font-weight: 600;
     }
 
+    section.alt .contact-item a {
+      color: var(--success);
+    }
+
     .contact-item a:hover {
       text-decoration: underline;
-    }
-
-    .highlight-box {
-      background: #eff6ff;
-      padding: 1rem;
-      border-radius: 6px;
-      border-left: 3px solid var(--primary);
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .form-group {
-      display: grid;
-      gap: 0.4rem;
-    }
-
-    .form-group label {
-      font-weight: 600;
-      color: var(--dark);
-      font-size: 0.95rem;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      padding: 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 0.95rem;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
-    }
-
-    .form-group textarea {
-      min-height: 100px;
-      resize: vertical;
     }
 
     /* Footer */
@@ -516,12 +605,12 @@
       background: var(--dark);
       color: white;
       padding: 2rem 0 1rem;
-      margin-top: 2rem;
+      margin-top: 0;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       margin-bottom: 1.5rem;
     }
@@ -549,6 +638,11 @@
       color: white;
     }
 
+    .footer-col p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
     .footer-bottom {
       text-align: center;
       padding-top: 1rem;
@@ -558,6 +652,24 @@
     }
 
     /* Responsive */
+    @media (max-width: 1024px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .step-group {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pricing-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 768px) {
       .mobile-toggle {
         display: flex;
@@ -596,25 +708,24 @@
         font-size: 1rem;
       }
 
-      .hero-cta {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-
       h2 {
         font-size: 1.5rem;
       }
 
-      .contact-content {
+      .grid-2,
+      .grid-3 {
         grid-template-columns: 1fr;
       }
 
-      .grid-2,
-      .grid-3 {
+      .step-group {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -644,12 +755,8 @@
     <p class="tagline">Emergency bug fixes, refactoring, custom builds — with clear project coordination and strategic thinking.</p>
     <div class="hero-badges">
       <span class="badge">100+ projects</span>
-      <span class="badge">Same-day fixes</span>
+      <span class="badge">Fast turnaround</span>
       <span class="badge">UK-based (GMT)</span>
-    </div>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">Get a 24-Hour Quote</a>
-      <a href="#work" class="btn btn-outline">See Work</a>
     </div>
   </div>
 </section>
@@ -663,7 +770,7 @@
       <div class="card">
         <div class="service-icon">🔴</div>
         <h3>Bug Fixes & Maintenance</h3>
-        <p>Critical errors, broken features, database issues. Root-cause analysis, not band-aids. Most fixed same/next day.</p>
+        <p>Critical errors, broken features, database issues. Root-cause analysis, not band-aids. Most fixed within 24 hours.</p>
         <div class="tech-stack">
           <span class="tech-badge">Error Analysis</span>
           <span class="tech-badge">Production Support</span>
@@ -726,9 +833,9 @@
     </p>
   </section>
 
-  <section id="work">
+  <section id="work" class="alt">
     <h2>Real Results</h2>
-    <p class="section-subtitle">Complete projects and refactoring examples</p>
+    <p class="section-subtitle">Complete projects and code improvements</p>
 
     <div class="grid-2">
       <div class="project-card featured">
@@ -742,7 +849,7 @@
           <li>Production-ready deployment</li>
         </ul>
         <div class="project-links">
-          <a href="https://github.com/PHPDev2026/screenshots-poc" class="btn btn-outline" target="_blank">View Proof →</a>
+          <a href="https://github.com/PHPDev2026/screenshots-poc" class="btn btn-primary" target="_blank">View Proof →</a>
         </div>
       </div>
 
@@ -757,20 +864,32 @@
           <li>Responsive product catalog</li>
         </ul>
         <div class="project-links">
-          <a href="https://github.com/PHPDev2026/screenshots-poc" class="btn btn-outline" target="_blank">View Proof →</a>
+          <a href="https://github.com/PHPDev2026/screenshots-poc" class="btn btn-primary" target="_blank">View Proof →</a>
         </div>
       </div>
 
       <div class="project-card">
         <h3>Legacy PHP → Modern Code</h3>
-        <p><strong>Problem:</strong> Untyped functions, no error handling, poor documentation.</p>
-        <p><strong>Result:</strong> Full PHP 8+ types, comprehensive validation, production-ready. Code is self-documenting.</p>
+        <p><strong>Issue:</strong> Untyped functions, no error handling, poor documentation.</p>
+        <p><strong>Fix:</strong> Full PHP 8+ types, comprehensive validation, production-ready code that's self-documenting.</p>
       </div>
 
       <div class="project-card">
         <h3>N+1 Queries → 15x Faster</h3>
-        <p><strong>Problem:</strong> Page loads in 12+ seconds due to inefficient database queries.</p>
-        <p><strong>Result:</strong> Eager loading, indexing, selective columns. Page load: 0.8s.</p>
+        <p><strong>Issue:</strong> Page loads in 12+ seconds. Database hammered on every request.</p>
+        <p><strong>Fix:</strong> Eager loading, indexing, selective columns. Page load: 0.8s. Same features, vastly better performance.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Missing Error Handling</h3>
+        <p><strong>Issue:</strong> Exceptions crash pages. Users see blank screens. No logging.</p>
+        <p><strong>Fix:</strong> Try/catch blocks, proper error logging, user-friendly error messages. Production stability restored.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Insecure Form Handling</h3>
+        <p><strong>Issue:</strong> No validation. SQL injection risk. XSS vulnerabilities.</p>
+        <p><strong>Fix:</strong> Input validation, parameterized queries, output escaping. Full security audit + hardening.</p>
       </div>
     </div>
   </section>
@@ -818,7 +937,7 @@
     </div>
   </section>
 
-  <section id="pricing">
+  <section id="pricing" class="alt">
     <h2>Pricing</h2>
     <p class="section-subtitle">Fixed scope, transparent costs</p>
 
@@ -829,7 +948,7 @@
         <ul>
           <li>1–4 hour fixes</li>
           <li>Root cause analysis</li>
-          <li>Same/next day</li>
+          <li>24 hour turnaround</li>
         </ul>
         <a href="#contact" class="btn btn-primary" style="margin-top: 1rem; width: 100%; text-align: center;">Request</a>
       </div>
@@ -862,7 +981,7 @@
     <h2>FAQ</h2>
     <div class="faq-item">
       <h4>How fast can you start?</h4>
-      <p>Small fixes: same day. Larger work: 24–48 hours after review.</p>
+      <p>Small fixes: usually same day. Larger projects: 24–48 hours after review and quote agreement.</p>
     </div>
     <div class="faq-item">
       <h4>Do you work with legacy code?</h4>
@@ -870,144 +989,4 @@
     </div>
     <div class="faq-item">
       <h4>How do you quote?</h4>
-      <p>Clear scope, timeline, and cost within 24 hours.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Do you offer ongoing support?</h4>
-      <p>Yes. Retainers available for recurring work and improvements. Plus 7 days free support after delivery.</p>
-    </div>
-    <div class="faq-item">
-      <h4>What about planning and strategy?</h4>
-      <p>I scope projects, identify risks early, and advise on realistic timelines and dependencies. You get honest assessment, not just a quote.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Get In Touch</h2>
-    <p class="section-subtitle">Available for new projects. UK-based (GMT/BST)</p>
-
-    <div class="contact-box">
-      <div class="contact-content">
-        <div class="contact-info">
-          <div class="contact-item">
-            <h4>📧 Email</h4>
-            <p><a href="mailto:phpdev2026@outlook.com">phpdev2026@outlook.com</a></p>
-            <p>Respond within 24 hours with clear quote.</p>
-          </div>
-
-          <div class="contact-item highlight-box">
-            <h4>✅ What to Include</h4>
-            <p>Problem summary, timeline, budget range, and repo link if available.</p>
-            <p><strong>GitHub:</strong> PHPDev2026</p>
-          </div>
-
-          <div class="contact-item">
-            <h4>Or Use This Form</h4>
-            <p><a href="https://docs.google.com/forms/d/136PWtMDNqIGicXAZo62V63ayl6vbj4O1Pcrxjj0PST0/edit" target="_blank">Quick 24-hour quote form →</a></p>
-          </div>
-        </div>
-
-        <form class="contact-form" action="mailto:phpdev2026@outlook.com" method="post" enctype="text/plain">
-          <div class="form-group">
-            <label for="service">What do you need?</label>
-            <select id="service" name="service">
-              <option>Bug fix</option>
-              <option>Refactoring</option>
-              <option>New feature</option>
-              <option>Custom build</option>
-              <option>Code review</option>
-              <option>Project planning</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Project details</label>
-            <textarea id="message" name="message" placeholder="Describe the issue, deadline, and budget."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; text-align: center;">Send Request</button>
-        </form>
-      </div>
-    </div>
-  </section>
-</div>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>PHP & Laravel Dev</h4>
-        <p>Bug fixes, refactoring, custom builds. Plus project planning and data strategy.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #cbd5e1;">100+ projects since 2019</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Core Skills</h4>
-        <ul>
-          <li>PHP 7–8.5 & Laravel</li>
-          <li>HTML5, CSS3, JavaScript</li>
-          <li>MySQL / MariaDB</li>
-          <li>Project scoping</li>
-          <li>SQL analytics</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:phpdev2026@outlook.com">📧 Email</a></li>
-          <li><a href="https://github.com/PHPDev2026" target="_blank">💻 GitHub</a></li>
-        </ul>
-        <p style="margin-top: 1rem; font-size: 0.9rem; color: #cbd5e1;">From £30/hour or fixed scope</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 PHP & Laravel Dev. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-
-<script>
-const toggle = document.querySelector('.mobile-toggle');
-const menu = document.querySelector('.nav-menu');
-
-toggle.addEventListener('click', () => {
-  menu.classList.toggle('active');
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const href = this.getAttribute('href');
-    if (href === '#') return;
-
-    const target = document.querySelector(href);
-    if (target) {
-      document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
-      this.classList.add('active');
-      window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
-      
-      if (window.innerWidth <= 768) {
-        menu.classList.remove('active');
-      }
-    }
-  });
-});
-</script>
-</body>
-</html>">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@email.com" required>
-          </div>
-          <div class="form-group
+      <p>Clear scope, timeline, and cost within 24
