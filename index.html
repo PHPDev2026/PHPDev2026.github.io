@@ -522,34 +522,25 @@ h4 {
   margin-top: 1.5rem;
 }
 
-.contact-form {
+.contact-actions {
   display: grid;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-.contact-form label {
-  font-weight: 600;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  width: 100%;
-  padding: 0.65rem 0.75rem;
-  border-radius: 8px;
+.contact-action {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 1rem;
   border: 1px solid var(--border);
-  font-family: inherit;
 }
 
-.contact-form textarea {
-  min-height: 120px;
-  resize: vertical;
+.contact-action h4 {
+  margin-bottom: 0.5rem;
 }
 
-.contact-form button {
-  justify-self: start;
+.contact-action .btn {
+  margin-top: 0.75rem;
 }
-
 .contact-item {
   border-bottom: 1px solid var(--border);
   padding: 0.75rem 0;
@@ -1102,30 +1093,18 @@ footer {
             <p><a href="https://docs.google.com/forms/d/136PWtMDNqIGicXAZo62V63ayl6vbj4O1Pcrxjj0PST0/edit" target="_blank" rel="noopener">Use my 24-hour quote form →</a></p>
           </div>
         </div>
-        <form class="contact-form" action="mailto:phpdev2026@outlook.com" method="post" enctype="text/plain">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required>
+        <div class="contact-actions">
+          <div class="contact-action">
+            <h4>Fastest: 24-hour quote form</h4>
+            <p>Answer a few questions and I’ll send a written quote within 24 hours.</p>
+            <a class="btn btn-primary" href="https://docs.google.com/forms/d/136PWtMDNqIGicXAZo62V63ayl6vbj4O1Pcrxjj0PST0/edit" target="_blank" rel="noopener">Open Quote Form</a>
           </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@email.com" required>
+          <div class="contact-action">
+            <h4>Email</h4>
+            <p>Prefer email? Send a brief with your timeline and budget.</p>
+            <a class="btn btn-outline" href="mailto:phpdev2026@outlook.com">Email Me</a>
           </div>
-          <div>
-            <label for="service">What do you need?</label>
-            <select id="service" name="service">
-              <option>Bug fix</option>
-              <option>Refactor / cleanup</option>
-              <option>New feature</option>
-              <option>Custom build</option>
-            </select>
-          </div>
-          <div>
-            <label for="message">Project details</label>
-            <textarea id="message" name="message" placeholder="Describe the issue, deadline, and budget."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Request</button>
-        </form>
+        </div>
       </div>
     </div>
   </section>
