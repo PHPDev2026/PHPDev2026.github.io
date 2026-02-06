@@ -909,6 +909,100 @@
 
         <form class="contact-form" action="mailto:phpdev2026@outlook.com" method="post" enctype="text/plain">
           <div class="form-group">
+            <label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option>Bug fix</option>
+              <option>Refactoring</option>
+              <option>New feature</option>
+              <option>Custom build</option>
+              <option>Code review</option>
+              <option>Project planning</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" placeholder="Describe the issue, deadline, and budget."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; text-align: center;">Send Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>PHP & Laravel Dev</h4>
+        <p>Bug fixes, refactoring, custom builds. Plus project planning and data strategy.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #cbd5e1;">100+ projects since 2019</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Core Skills</h4>
+        <ul>
+          <li>PHP 7–8.5 & Laravel</li>
+          <li>HTML5, CSS3, JavaScript</li>
+          <li>MySQL / MariaDB</li>
+          <li>Project scoping</li>
+          <li>SQL analytics</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:phpdev2026@outlook.com">📧 Email</a></li>
+          <li><a href="https://github.com/PHPDev2026" target="_blank">💻 GitHub</a></li>
+        </ul>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #cbd5e1;">From £30/hour or fixed scope</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 PHP & Laravel Dev. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.querySelector('.mobile-toggle');
+const menu = document.querySelector('.nav-menu');
+
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+
+    const target = document.querySelector(href);
+    if (target) {
+      document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
+      this.classList.add('active');
+      window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+      
+      if (window.innerWidth <= 768) {
+        menu.classList.remove('active');
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" placeholder="Your name" required>
           </div>
