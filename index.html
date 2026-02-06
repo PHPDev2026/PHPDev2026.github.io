@@ -989,4 +989,115 @@
     </div>
     <div class="faq-item">
       <h4>How do you quote?</h4>
-      <p>Clear scope, timeline, and cost within 24
+      <p>Clear scope, timeline, and cost within 24 hours.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do you offer ongoing support?</h4>
+      <p>Yes. Retainers available for recurring work and improvements. Plus 7 days free support after delivery.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What about planning and strategy?</h4>
+      <p>I scope projects, identify risks early, and advise on realistic timelines and dependencies. You get honest assessment, not just a quote.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="alt">
+    <h2>Get In Touch</h2>
+    <p class="section-subtitle">Available for new projects. UK-based (GMT/BST)</p>
+
+    <div class="contact-box">
+      <div class="contact-info">
+        <div class="contact-item">
+          <h4>📧 Email</h4>
+          <p><a href="mailto:phpdev2026@outlook.com">phpdev2026@outlook.com</a></p>
+          <p>Respond within 24 hours with clear quote.</p>
+        </div>
+
+        <div class="contact-item">
+          <h4>✅ What to Include</h4>
+          <p>Problem summary, timeline, budget range, and repo link if available.</p>
+          <p><strong>GitHub:</strong> PHPDev2026</p>
+        </div>
+
+        <div class="contact-item">
+          <h4>Alternative</h4>
+          <p><a href="https://docs.google.com/forms/d/136PWtMDNqIGicXAZo62V63ayl6vbj4O1Pcrxjj0PST0/edit" target="_blank">Use the Google Form →</a> (avoids email client issues)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>PHP & Laravel Dev</h4>
+        <p>Bug fixes, refactoring, custom builds. Plus project planning and data strategy.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">100+ projects since 2019</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Core Skills</h4>
+        <ul>
+          <li>PHP 7–8.5 & Laravel</li>
+          <li>HTML5, CSS3, JavaScript</li>
+          <li>MySQL / MariaDB</li>
+          <li>Project scoping</li>
+          <li>SQL analytics</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:phpdev2026@outlook.com">📧 Email</a></li>
+          <li><a href="https://github.com/PHPDev2026" target="_blank">💻 GitHub</a></li>
+        </ul>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">From £30/hour or fixed scope</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 PHP & Laravel Dev. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.querySelector('.mobile-toggle');
+const menu = document.querySelector('.nav-menu');
+
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+
+    const target = document.querySelector(href);
+    if (target) {
+      document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
+      this.classList.add('active');
+      window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+      
+      if (window.innerWidth <= 768) {
+        menu.classList.remove('active');
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
