@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="PHP & Laravel developer: bug fixes, refactoring, full-stack builds, and project strategy. Fast delivery, clear communication.">
   <title>PHP & Laravel Developer | Bug Fixes & Custom Builds</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     :root {
       --primary: #1e40af;
       --primary-dark: #1e3a8a;
-      --accent: #0369a1;
       --dark: #0f172a;
       --light: #f8fafc;
       --border: #e2e8f0;
@@ -40,7 +40,6 @@
       padding: 0 20px;
     }
 
-    /* Navigation */
     nav {
       background: white;
       border-bottom: 1px solid var(--border);
@@ -96,11 +95,10 @@
       background: var(--dark);
     }
 
-    /* Hero */
     .hero {
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
       color: white;
-      padding: 3rem 0;
+      padding: 4rem 0;
       text-align: center;
     }
 
@@ -135,7 +133,6 @@
       font-size: 0.9rem;
     }
 
-    /* Sections */
     section {
       padding: 2.5rem 0;
     }
@@ -148,14 +145,8 @@
       padding: 2.5rem calc(50vw - 50%);
     }
 
-    section.alt h2 {
-      color: white;
-    }
-
-    section.alt h3 {
-      color: white;
-    }
-
+    section.alt h2,
+    section.alt h3,
     section.alt h4 {
       color: white;
     }
@@ -181,25 +172,6 @@
 
     section.alt .card:hover {
       border-color: var(--primary);
-    }
-
-    section.alt .tech-badge {
-      background: #334155;
-      color: #e2e8f0;
-    }
-
-    section.alt .faq-item {
-      background: #1e293b;
-      border-color: #334155;
-      color: white;
-    }
-
-    section.alt .faq-item h4 {
-      color: white;
-    }
-
-    section.alt .faq-item p {
-      color: #cbd5e1;
     }
 
     h2 {
@@ -228,7 +200,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Grid Layouts */
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -266,7 +237,6 @@
       margin-bottom: 0.75rem;
     }
 
-    /* Tech Stack */
     .tech-stack {
       display: flex;
       flex-wrap: wrap;
@@ -283,13 +253,120 @@
       font-weight: 500;
     }
 
-    /* Service Cards */
-    .service-icon {
-      font-size: 2.2rem;
-      margin-bottom: 0.75rem;
+    section.alt .tech-badge {
+      background: #334155;
+      color: #e2e8f0;
     }
 
-    /* Projects Section */
+    /* Service Cards */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .service-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      border-color: var(--primary);
+    }
+
+    .card-header-content {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      user-select: none;
+    }
+
+    .card-header-content:hover {
+      background: var(--light);
+    }
+
+    .card-title-section {
+      flex: 1;
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      min-width: 50px;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0.5rem 0 0 0;
+      color: var(--dark);
+    }
+
+    .service-price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0.75rem 0 0 0;
+    }
+
+    .toggle-icon {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      transition: transform 0.3s ease;
+      min-width: 24px;
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+
+    .service-card.expanded .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      border-top: 1px solid var(--border);
+    }
+
+    .service-card.expanded .card-body {
+      max-height: 500px;
+    }
+
+    .card-body-content {
+      padding: 1.5rem;
+    }
+
+    .service-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .ideal-for {
+      background: var(--light);
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .ideal-for strong {
+      color: var(--primary);
+    }
+
+    /* Project Cards */
     .project-card {
       background: white;
       padding: 1.5rem;
@@ -410,118 +487,6 @@
       margin-bottom: 0.75rem;
     }
 
-    /* Pricing Grid */
-    .pricing-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .pricing-card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--primary);
-    }
-
-    section.alt .pricing-card {
-      background: #1e293b;
-      border-color: #334155;
-      border-top-color: var(--success);
-      color: white;
-    }
-
-    section.alt .pricing-card h3 {
-      color: white;
-    }
-
-    section.alt .pricing-card p {
-      color: #cbd5e1;
-    }
-
-    .price {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0.75rem 0;
-    }
-
-    section.alt .price {
-      color: var(--success);
-    }
-
-    .pricing-card ul {
-      list-style: none;
-      margin: 1rem 0;
-      padding: 0;
-    }
-
-    .pricing-card li {
-      padding: 0.3rem 0;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    section.alt .pricing-card li {
-      color: #cbd5e1;
-    }
-
-    .pricing-card li:before {
-      content: "→ ";
-      color: var(--primary);
-      font-weight: bold;
-      margin-right: 0.5rem;
-    }
-
-    section.alt .pricing-card li:before {
-      color: var(--success);
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      border: 2px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    .btn-dark {
-      background: var(--dark);
-      color: white;
-    }
-
-    .btn-dark:hover {
-      background: #1e293b;
-      transform: translateY(-2px);
-    }
-
-    section.alt .btn-primary {
-      background: var(--success);
-      color: white;
-    }
-
-    section.alt .btn-primary:hover {
-      background: #047857;
-      transform: translateY(-2px);
-    }
-
     /* FAQ */
     .faq-item {
       background: white;
@@ -531,9 +496,19 @@
       margin-bottom: 1rem;
     }
 
+    section.alt .faq-item {
+      background: #1e293b;
+      border-color: #334155;
+      color: white;
+    }
+
     .faq-item h4 {
       margin-bottom: 0.5rem;
       color: var(--dark);
+    }
+
+    section.alt .faq-item h4 {
+      color: white;
     }
 
     .faq-item p {
@@ -541,7 +516,11 @@
       font-size: 0.95rem;
     }
 
-    /* Contact Section */
+    section.alt .faq-item p {
+      color: #cbd5e1;
+    }
+
+    /* Contact */
     .contact-box {
       background: white;
       padding: 2rem;
@@ -601,6 +580,49 @@
 
     .contact-item a:hover {
       text-decoration: underline;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #1e293b;
+      transform: translateY(-2px);
+    }
+
+    section.alt .btn-primary {
+      background: var(--success);
+      color: white;
+    }
+
+    section.alt .btn-primary:hover {
+      background: #047857;
+      transform: translateY(-2px);
     }
 
     /* Footer */
@@ -664,10 +686,6 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .pricing-cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
       .footer-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -703,6 +721,10 @@
         border-bottom: 1px solid var(--border);
       }
 
+      .hero {
+        padding: 2.5rem 0;
+      }
+
       .hero h1 {
         font-size: 1.8rem;
       }
@@ -716,15 +738,12 @@
       }
 
       .grid-2,
-      .grid-3 {
+      .grid-3,
+      .services-grid {
         grid-template-columns: 1fr;
       }
 
       .step-group {
-        grid-template-columns: 1fr;
-      }
-
-      .pricing-cards {
         grid-template-columns: 1fr;
       }
 
@@ -756,8 +775,8 @@
     <h1>PHP & Laravel fixes that unblock your business</h1>
     <p class="tagline">Emergency bug fixes, refactoring, custom builds — with clear project coordination and strategic thinking.</p>
     <div class="hero-badges">
-      <span class="badge">100+ projects</span>
-      <span class="badge">Fast turnaround</span>
+      <span class="badge">8 years experience</span>
+      <span class="badge">Built in days</span>
       <span class="badge">UK-based (GMT)</span>
     </div>
   </div>
@@ -766,144 +785,243 @@
 <div class="container">
   <section id="services">
     <h2>Services & Pricing</h2>
-    <p class="section-subtitle">Clear pricing. Fast delivery. Strategic thinking at every step.</p>
+    <p class="section-subtitle">Built in days, not weeks. Full-stack delivery without the usual delays.</p>
     
-    <div class="grid-2">
-      <div class="card">
-        <div class="service-icon">🔗</div>
-        <h3>Code Review & Strategy</h3>
-        <p>Honest assessment of existing codebases. Architecture advice, security review, refactoring roadmaps tailored to your goals.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Teams inheriting legacy code, or wanting expert perspective before investing in refactoring.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £120</div>
-        <div class="tech-stack">
-          <span class="tech-badge">Architecture Review</span>
-          <span class="tech-badge">Security Assessment</span>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">🔗</div>
+            <h3>Code Review & Strategy</h3>
+            <div class="service-price">£250</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">Honest assessment of existing codebases. Architecture advice, security review, refactoring roadmaps tailored to your goals.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Teams inheriting legacy code, or wanting expert perspective before investing in refactoring.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">Architecture Review</span>
+              <span class="tech-badge">Security Assessment</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="service-icon">📊</div>
-        <h3>Project Planning</h3>
-        <p>Scope definition, timeline estimation, risk assessment. I think through deliverables, dependencies, and realistic timelines upfront.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Founders and PMs who need realistic timelines, clear scope, and early risk identification before committing resources.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £150</div>
-        <div class="tech-stack">
-          <span class="tech-badge">Scoping</span>
-          <span class="tech-badge">Risk Planning</span>
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">📊</div>
+            <h3>Project Planning</h3>
+            <div class="service-price">£300</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">Scope definition, timeline estimation, risk assessment. I think through deliverables, dependencies, and realistic timelines upfront.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Founders and PMs who need realistic timelines, clear scope, and early risk identification before committing resources.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">Scoping</span>
+              <span class="tech-badge">Risk Planning</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="service-icon">♻️</div>
-        <h3>Refactoring & Cleanup</h3>
-        <p>Legacy PHP → modern, typed, maintainable code. Security hardening, performance gains, technical debt removal.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Anyone with older, messy code that's slowing down development or causing reliability issues.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £250</div>
-        <div class="tech-stack">
-          <span class="tech-badge">Modernization</span>
-          <span class="tech-badge">Type Safety</span>
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">♻️</div>
+            <h3>Refactoring & Cleanup</h3>
+            <div class="service-price">£500</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">Legacy PHP → modern, typed, maintainable code. Security hardening, performance gains, technical debt removal.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Anyone with older, messy code that's slowing down development or causing reliability issues.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">Modernization</span>
+              <span class="tech-badge">Type Safety</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="service-icon">🔴</div>
-        <h3>Bug Fixes & Maintenance</h3>
-        <p>Critical errors, broken features, database issues. Root-cause analysis, not band-aids. Most fixed within 24 hours.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Production emergencies blocking customers or revenue. Get fixed fast and done right.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £80</div>
-        <div class="tech-stack">
-          <span class="tech-badge">Error Analysis</span>
-          <span class="tech-badge">Production Support</span>
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">🔴</div>
+            <h3>Bug Fixes & Maintenance</h3>
+            <div class="service-price">£150</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">Critical errors, broken features, database issues. Root-cause analysis, not band-aids. Most fixed within 24 hours.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Production emergencies blocking customers or revenue. Get fixed fast and done right.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">Error Analysis</span>
+              <span class="tech-badge">Production Support</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="service-icon">🏗️</div>
-        <h3>Custom Development</h3>
-        <p>Full-stack builds: responsive UI, Laravel backends, user systems, database design. Delivered in days, not weeks.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Building new features, MVPs, or complete applications from scratch without the usual delays.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £600</div>
-        <div class="tech-stack">
-          <span class="tech-badge">Full-Stack</span>
-          <span class="tech-badge">Database Design</span>
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">🏗️</div>
+            <h3>Custom Development</h3>
+            <div class="service-price">£1200–2500</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">Full-stack builds: responsive UI, Laravel backends, user systems, database design. Delivered in days, not weeks.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Building new features, MVPs, or complete applications from scratch without the usual delays.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">Full-Stack</span>
+              <span class="tech-badge">Database Design</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="service-icon">📈</div>
-        <h3>Data & Analytics</h3>
-        <p>SQL queries, performance metrics, user behavior analysis. Extract insights from your data and advise on optimization.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Anyone wanting to understand what's happening in their data—usage patterns, bottlenecks, growth opportunities.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £140</div>
-        <div class="tech-stack">
-          <span class="tech-badge">SQL Analytics</span>
-          <span class="tech-badge">Performance Metrics</span>
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">📈</div>
+            <h3>Data & Analytics</h3>
+            <div class="service-price">£250</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">SQL queries, performance metrics, user behavior analysis. Extract insights from your data and advise on optimization.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Anyone wanting to understand what's happening in their data—usage patterns, bottlenecks, growth opportunities.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">SQL Analytics</span>
+              <span class="tech-badge">Performance Metrics</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="service-icon">🚀</div>
-        <h3>Performance Optimization</h3>
-        <p>Profile slow queries, optimize indexes, caching strategies, and database tuning. Turn sluggish apps into fast ones.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Sites or apps that feel slow. Users dropping off, or just tired of waiting for pages to load.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £180</div>
-        <div class="tech-stack">
-          <span class="tech-badge">Query Optimization</span>
-          <span class="tech-badge">Caching Strategy</span>
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">🚀</div>
+            <h3>Performance Optimization</h3>
+            <div class="service-price">£350</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">Profile slow queries, optimize indexes, caching strategies, and database tuning. Turn sluggish apps into fast ones.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Sites or apps that feel slow. Users dropping off, or just tired of waiting for pages to load.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">Query Optimization</span>
+              <span class="tech-badge">Caching Strategy</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="service-icon">🔒</div>
-        <h3>Security Audit</h3>
-        <p>Find vulnerabilities: SQL injection, XSS, insecure authentication, sensitive data exposure. Comprehensive hardening plan included.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Anyone handling customer data, payments, or personal information who needs to know they're genuinely protected.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £200</div>
-        <div class="tech-stack">
-          <span class="tech-badge">Vulnerability Assessment</span>
-          <span class="tech-badge">Hardening</span>
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">🔒</div>
+            <h3>Security Audit</h3>
+            <div class="service-price">£400</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">Find vulnerabilities: SQL injection, XSS, insecure authentication, sensitive data exposure. Comprehensive hardening plan included.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Anyone handling customer data, payments, or personal information who needs to know they're genuinely protected.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">Vulnerability Assessment</span>
+              <span class="tech-badge">Hardening</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="service-icon">⚙️</div>
-        <h3>API Development</h3>
-        <p>Build or extend RESTful APIs. Webhooks, integrations, authentication, rate limiting. Clean, documented, production-ready.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Need to connect your app to third-party services, or expose your data via API for mobile/external integrations.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £280</div>
-        <div class="tech-stack">
-          <span class="tech-badge">REST APIs</span>
-          <span class="tech-badge">Integrations</span>
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">⚙️</div>
+            <h3>API Development</h3>
+            <div class="service-price">£600</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">Build or extend RESTful APIs. Webhooks, integrations, authentication, rate limiting. Clean, documented, production-ready.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Need to connect your app to third-party services, or expose your data via API for mobile/external integrations.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">REST APIs</span>
+              <span class="tech-badge">Integrations</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="service-icon">💾</div>
-        <h3>Database Design & Optimization</h3>
-        <p>Schema design, migrations, indexing strategies, query optimization. Build databases that scale with your business.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Building new systems from scratch, or fixing databases that are becoming a bottleneck as you grow.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £220</div>
-        <div class="tech-stack">
-          <span class="tech-badge">Schema Design</span>
-          <span class="tech-badge">Indexing</span>
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">💾</div>
+            <h3>Database Design & Optimization</h3>
+            <div class="service-price">£500</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">Schema design, migrations, indexing strategies, query optimization. Build databases that scale with your business.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Building new systems from scratch, or fixing databases that are becoming a bottleneck as you grow.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">Schema Design</span>
+              <span class="tech-badge">Indexing</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="service-icon">📦</div>
-        <h3>Laravel & PHP Upgrades</h3>
-        <p>Modernize Laravel versions, upgrade PHP 7→8, handle deprecations. Keep your stack current and secure.</p>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-top: 0.75rem;">💡 <strong>Ideal for:</strong> Older Laravel/PHP projects that need updating but you're unsure about breaking changes or the effort involved.</p>
-        <div style="margin-top: 1rem; font-weight: 600; color: var(--primary); font-size: 1.3rem;">From £200</div>
-        <div class="tech-stack">
-          <span class="tech-badge">Version Upgrades</span>
-          <span class="tech-badge">Deprecation Fixes</span>
+      <div class="service-card">
+        <div class="card-header-content" onclick="toggleCard(this)">
+          <div class="card-title-section">
+            <div class="service-icon">📦</div>
+            <h3>Laravel & PHP Upgrades</h3>
+            <div class="service-price">£350</div>
+          </div>
+          <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="card-body">
+          <div class="card-body-content">
+            <p class="service-description">Modernize Laravel versions, upgrade PHP 7→8, handle deprecations. Keep your stack current and secure.</p>
+            <div class="ideal-for">💡 <strong>Ideal for:</strong> Older Laravel/PHP projects that need updating but you're unsure about breaking changes or the effort involved.</div>
+            <div class="tech-stack">
+              <span class="tech-badge">Version Upgrades</span>
+              <span class="tech-badge">Deprecation Fixes</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <p style="color: var(--text-secondary); margin-top: 2rem; font-size: 0.95rem;">
-      <strong>Core Stack:</strong> PHP 7-8.5, Laravel 11-12, HTML5/CSS3/JavaScript, MySQL/MariaDB, Bootstrap, Git/GitHub
+    <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 0.9rem;">
+      <strong>Core Stack:</strong> PHP 7–8.5, Laravel 11–12, HTML5/CSS3/JavaScript, MySQL/MariaDB, Bootstrap, Git/GitHub
     </p>
   </section>
 
@@ -1011,8 +1129,6 @@
     </div>
   </section>
 
-
-
   <section>
     <h2>FAQ</h2>
     <div class="faq-item">
@@ -1065,7 +1181,7 @@
       <div class="footer-col">
         <h4>PHP & Laravel Dev</h4>
         <p>Bug fixes, refactoring, custom builds. Plus project planning and data strategy.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">100+ projects since 2019</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">8 years of daily work</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
@@ -1093,7 +1209,7 @@
           <li><a href="mailto:phpdev2026@outlook.com">📧 Email</a></li>
           <li><a href="https://github.com/PHPDev2026" target="_blank">💻 GitHub</a></li>
         </ul>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">From £30/hour or fixed scope</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">£150–2500 fixed scope</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1109,6 +1225,19 @@ const menu = document.querySelector('.nav-menu');
 toggle.addEventListener('click', () => {
   menu.classList.toggle('active');
 });
+
+function toggleCard(headerElement) {
+  const card = headerElement.closest('.service-card');
+  const isExpanded = card.classList.contains('expanded');
+  
+  document.querySelectorAll('.service-card.expanded').forEach(openCard => {
+    if (openCard !== card) {
+      openCard.classList.remove('expanded');
+    }
+  });
+  
+  card.classList.toggle('expanded');
+}
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
@@ -1129,5 +1258,3 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 </script>
-</body>
-</html>
